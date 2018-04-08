@@ -47,7 +47,6 @@
 				</select>
 				<button type="submit">Buscar por inicial</button>
 			</form></td></tr>
-			<tr><td align="center"></td>
 
 		</table>
 
