@@ -25,13 +25,13 @@ public class AppController {
 
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
-		ModelAndView model = new ModelAndView("LoginAdmin");
+		ModelAndView model = new ModelAndView("menu");
 		return model;
 	}
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newUser() {
-		ModelAndView model = new ModelAndView("UserForm");
+		ModelAndView model = new ModelAndView("userForm");
 		model.addObject("contact", new Contact());
 		return model;		
 	}
@@ -40,7 +40,7 @@ public class AppController {
 	public ModelAndView editContact(HttpServletRequest request) {
 		int contactId = Integer.parseInt(request.getParameter("id"));
 		Contact contact = contactService.get(contactId);
-		ModelAndView model = new ModelAndView("UserForm");
+		ModelAndView model = new ModelAndView("userForm");
 		model.addObject("contact", contact);
 		return model;		
 	}
@@ -55,7 +55,7 @@ public class AppController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public ModelAndView listar(){
 		List<Contact> listContacts = contactService.list();
-		ModelAndView model = new ModelAndView("Listado");
+		ModelAndView model = new ModelAndView("listado");
 		model.addObject("contactList", listContacts);
 		return model;
 	}
@@ -63,7 +63,7 @@ public class AppController {
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	public ModelAndView search(HttpServletRequest request){
 		List<Contact> listContacts = contactService.search(request.getParameter("selector"));
-		ModelAndView model = new ModelAndView("Listado");
+		ModelAndView model = new ModelAndView("listado");
 		model.addObject("contactList", listContacts);
 		return model;
 	}
