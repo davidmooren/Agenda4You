@@ -49,7 +49,7 @@ public class AppController {
 	public ModelAndView deleteUser(HttpServletRequest request) {
 		int userId = Integer.parseInt(request.getParameter("id"));
 		contactService.delete(userId);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/");		
 	}
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
