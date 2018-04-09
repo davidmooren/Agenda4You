@@ -5,7 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class UsuarioAdminImpl implements UsuarioAdmin {
+public class UsuarioAdminServiceImpl implements UsuarioAdminService {
 
 	
 	
