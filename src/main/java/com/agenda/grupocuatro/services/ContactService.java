@@ -1,8 +1,8 @@
-package com.ejemplos.spring.services;
+package com.agenda.grupocuatro.services;
 
 import java.util.List;
 
-import com.ejemplos.spring.model.Contact;
+import com.agenda.grupocuatro.model.Contact;
 
 public interface ContactService {
 	public List<Contact> list();

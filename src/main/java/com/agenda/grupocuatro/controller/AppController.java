@@ -1,4 +1,4 @@
-package com.ejemplos.spring.controller;
+package com.agenda.grupocuatro.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ejemplos.spring.model.Contact;
-import com.ejemplos.spring.services.ContactService;
+import com.agenda.grupocuatro.model.Contact;
+import com.agenda.grupocuatro.services.ContactService;
 
 /**
  * Handles requests for the application home page.

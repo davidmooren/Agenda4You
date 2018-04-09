@@ -1,4 +1,4 @@
-package com.ejemplos.spring.model;
+package com.agenda.grupocuatro.model;
 
 public abstract class Usuario {
 

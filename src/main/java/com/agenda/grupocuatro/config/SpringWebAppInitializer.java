@@ -1,4 +1,4 @@
-package com.ejemplos.spring.config;
+package com.agenda.grupocuatro.config;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

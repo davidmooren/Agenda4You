@@ -1,4 +1,4 @@
-package com.ejemplos.spring.model;
+package com.agenda.grupocuatro.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

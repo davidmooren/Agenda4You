@@ -1,4 +1,4 @@
-package com.ejemplos.spring.config;
+package com.agenda.grupocuatro.config;
 
 import java.util.Properties;
 
@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.ejemplos.spring.model.Contact;
+import com.agenda.grupocuatro.model.Contact;
 
 @Configuration
-@ComponentScan("com.ejemplos.spring")
+@ComponentScan("com.agenda.grupocuatro")
 @EnableTransactionManagement
 public class ApplicationContextConfig {
     @Bean(name = "viewResolver")

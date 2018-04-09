@@ -1,6 +1,6 @@
-package com.ejemplos.spring.dao;
+package com.agenda.grupocuatro.dao;
 
-import com.ejemplos.spring.model.UsuarioAdmin;
+import com.agenda.grupocuatro.model.UsuarioAdmin;
 
 public interface UsuarioAdminDAO {
 

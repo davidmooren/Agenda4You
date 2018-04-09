@@ -1,4 +1,4 @@
-package com.ejemplos.spring.dao;
+package com.agenda.grupocuatro.dao;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ejemplos.spring.model.Contact;
-import com.ejemplos.spring.model.UsuarioAdmin;
+import com.agenda.grupocuatro.model.Contact;
+import com.agenda.grupocuatro.model.UsuarioAdmin;
 
 @Service
 @Transactional

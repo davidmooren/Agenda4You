@@ -1,4 +1,4 @@
-package com.ejemplos.spring.services;
+package com.agenda.grupocuatro.services;
 
 public interface UsuarioAdminService {
 

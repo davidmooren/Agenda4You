@@ -1,8 +1,8 @@
-package com.ejemplos.spring.dao;
+package com.agenda.grupocuatro.dao;
 
 import java.util.List;
 
-import com.ejemplos.spring.model.Contact;
+import com.agenda.grupocuatro.model.Contact;
 
 public interface ContactDAO {
 	public List<Contact> list();
