@@ -3,7 +3,10 @@ package com.agenda.grupocuatro.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import org.jboss.logging.Logger;
+import org.jboss.logging.Logger.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.agenda.grupocuatro.model.Contact;
+import com.agenda.grupocuatro.model.UsuarioAdmin;
 import com.agenda.grupocuatro.services.ContactService;
+import com.agenda.grupocuatro.services.UsuarioAdminService;
 
 /**
  * Handles requests for the application home page.
@@ -22,6 +27,7 @@ public class AppController {
 	
 	@Autowired
 	private ContactService contactService;
+	private UsuarioAdminService adminService;
 
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
@@ -73,6 +79,21 @@ public class AppController {
 	public ModelAndView saveUser(@ModelAttribute Contact user) {
 		contactService.saveOrUpdate(user);
 		return new ModelAndView("redirect:/");
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView loginAdmin(HttpServletRequest request) {		
+		UsuarioAdmin admin = adminService.login(request.getParameter("usuario"), request.getParameter("password"));
+		
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("admin", admin );
+		
+		Logger miLog = Logger.getLogger(AppController.class);
+		miLog.log(Level.WARN, "El usuario admin es: "+admin.toString() );
+		
+		return new ModelAndView("redirect:/");		
+		
 	}
 	
 }
