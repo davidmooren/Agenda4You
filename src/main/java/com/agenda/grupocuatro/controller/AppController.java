@@ -25,7 +25,7 @@ public class AppController {
 
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
-		ModelAndView model = new ModelAndView("Login");
+		ModelAndView model = new ModelAndView("login");
 		return model;
 		
 	}
