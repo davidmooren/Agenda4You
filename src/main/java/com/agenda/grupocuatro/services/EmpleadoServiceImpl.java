@@ -1,5 +1,7 @@
 package com.agenda.grupocuatro.services;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	EmpleadoDAO empleadoDAO;
 	
 	@Autowired
-	public Empleado listaEmpleados() {		
+	public List<Empleado> listaEmpleados() {		
 		return empleadoDAO.listaEmpleados();
 	}
 
