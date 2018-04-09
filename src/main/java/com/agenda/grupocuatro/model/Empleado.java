@@ -5,7 +5,6 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,19 +15,19 @@ public class Empleado {
 
 	@Id
 	@GeneratedValue
-	private int idempleado;
+	private int idempleados;
 
 	private String codEmpleado;
 	private String salario;
 	private Date fechaAlta;
 	
 @OneToOne
-@JoinColumn(name="idDepartamento", referencedColumnName="iddepartamento")
+//@JoinColumn(name="idDepartamento", referencedColumnName="iddepartamento")
 	private Departamento departamento;
 	
 @OneToOne
-@JoinColumn(name="idCategoria", referencedColumnName="idcategorias")
-	private Categorias categoria;
+//@JoinColumn(name="idCategoria", referencedColumnName="idcategorias")
+	private Categorias categorias;
 	
 	
 	
@@ -41,24 +40,24 @@ public class Empleado {
 	public Empleado(int idempleado, String codEmpleado, String salario, Date fechaAlta, Departamento idDepartamento,
 			Categorias idCategoria) {
 		super();
-		this.idempleado = idempleado;
+		this.idempleados = idempleado;
 		this.codEmpleado = codEmpleado;
 		this.salario = salario;
 		this.fechaAlta = fechaAlta;
 		this.departamento = idDepartamento;
-		this.categoria = idCategoria;
+		this.categorias = idCategoria;
 	}
 
 
 
-	public int getIdempleado() {
-		return idempleado;
+	public int getIdempleados() {
+		return idempleados;
 	}
 
 
 
-	public void setIdempleado(int idempleado) {
-		this.idempleado = idempleado;
+	public void setIdempleados(int idempleado) {
+		this.idempleados = idempleado;
 	}
 
 
@@ -111,14 +110,14 @@ public class Empleado {
 
 
 
-	public Categorias getCategoria() {
-		return categoria;
+	public Categorias getCategorias() {
+		return categorias;
 	}
 
 
 
-	public void setCategoria(Categorias categoria) {
-		this.categoria = categoria;
+	public void setCategorias(Categorias categoria) {
+		this.categorias = categoria;
 	}
 
 	

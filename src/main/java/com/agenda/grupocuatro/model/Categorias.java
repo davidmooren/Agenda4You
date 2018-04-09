@@ -12,8 +12,7 @@ public class Categorias {
 
 	@Id
 	@GeneratedValue
-	@Column(name="idcategorias")
-	private int idCategorias;
+	private int idcategorias;
 	private String nombre;
 	private String descripcion;
 	
@@ -22,17 +21,17 @@ public class Categorias {
 	}
 
 	public Categorias(int idCategorias, String nombre, String descripcion) {
-		this.idCategorias = idCategorias;
+		this.idcategorias = idCategorias;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
 
 	public int getIdCategorias() {
-		return idCategorias;
+		return idcategorias;
 	}
 
 	public void setIdCategorias(int idCategorias) {
-		this.idCategorias = idCategorias;
+		this.idcategorias = idCategorias;
 	}
 
 	public String getNombre() {
