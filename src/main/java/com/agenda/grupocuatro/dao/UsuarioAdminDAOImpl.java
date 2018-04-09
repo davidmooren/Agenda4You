@@ -41,7 +41,7 @@ public class UsuarioAdminDAOImpl implements UsuarioAdminDAO {
 		milog.log(Level.WARN, "paso por aqui gilipollas los dos");
 		
 		
-		String hql = "from Admin where name=" + nombre + " and password = "+password;
+		String hql = "from usuarioadmin where usuario LIKE '" + nombre + "' AND pass LIKE '"+password +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")

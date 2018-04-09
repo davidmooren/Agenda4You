@@ -1,5 +1,6 @@
 package com.agenda.grupocuatro.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +12,7 @@ public class UsuarioAdmin  {
 
 	@Id
 	@GeneratedValue
+	@Column(name="id")
 	private int idAdmin;
 	private String usuario;
 	private String pass;
