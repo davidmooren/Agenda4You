@@ -97,7 +97,7 @@ public class AppController {
 		return new ModelAndView("redirect:/");				
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView listaEmpleados(HttpServletRequest request) {		
 		
 		List<Empleado> empleados = empleadoService.listaEmpleados();

@@ -16,10 +16,12 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Autowired
 	EmpleadoDAO empleadoDAO;
-	
-	@Autowired
-	public List<Empleado> listaEmpleados() {		
+
+	@Override
+	public List<Empleado> listaEmpleados() {
 		return empleadoDAO.listaEmpleados();
 	}
 
 }
+
+
