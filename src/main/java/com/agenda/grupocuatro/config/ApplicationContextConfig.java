@@ -19,6 +19,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Departamento;
+import com.agenda.grupocuatro.model.Empleado;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
 
 @Configuration
@@ -68,6 +69,7 @@ public class ApplicationContextConfig {
       	sessionBuilder.addAnnotatedClasses(UsuarioAdmin.class);
     	sessionBuilder.addAnnotatedClasses(Departamento.class);
     	sessionBuilder.addAnnotatedClasses(Categorias.class);
+    	sessionBuilder.addAnnotatedClasses(Empleado.class);
     	return sessionBuilder.buildSessionFactory();
     }
     
