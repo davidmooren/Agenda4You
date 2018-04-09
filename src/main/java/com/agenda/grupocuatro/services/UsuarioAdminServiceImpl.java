@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.agenda.grupocuatro.dao.UsuarioAdminDAO;
+import com.agenda.grupocuatro.dao.UsuarioAdminDAOImpl;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
 
 @Service

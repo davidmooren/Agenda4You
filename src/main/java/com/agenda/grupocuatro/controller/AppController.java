@@ -27,6 +27,7 @@ public class AppController {
 	
 	@Autowired
 	private ContactService contactService;
+	@Autowired
 	private UsuarioAdminService adminService;
 
 	@RequestMapping("/")
@@ -82,15 +83,24 @@ public class AppController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView loginAdmin(HttpServletRequest request) {		
+	public ModelAndView loginAdmin(HttpServletRequest request) {	
+		
+		Logger miLog = Logger.getLogger(AppController.class);
+		
+		miLog.log(Level.WARN, "requestn es: "+request.getParameter("password"));
+		
+
+		
 		UsuarioAdmin admin = adminService.login(request.getParameter("usuario"), request.getParameter("password"));
 		
 		HttpSession session = request.getSession();
 		
 		session.setAttribute("admin", admin );
 		
-		Logger miLog = Logger.getLogger(AppController.class);
 		miLog.log(Level.WARN, "El usuario admin es: "+admin.toString() );
+		
+		
+		
 		
 		return new ModelAndView("redirect:/");		
 		
