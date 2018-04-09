@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Departamento;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
@@ -66,6 +67,7 @@ public class ApplicationContextConfig {
     	sessionBuilder.addAnnotatedClasses(Contact.class);
       	sessionBuilder.addAnnotatedClasses(UsuarioAdmin.class);
     	sessionBuilder.addAnnotatedClasses(Departamento.class);
+    	sessionBuilder.addAnnotatedClasses(Categorias.class);
     	return sessionBuilder.buildSessionFactory();
     }
     
