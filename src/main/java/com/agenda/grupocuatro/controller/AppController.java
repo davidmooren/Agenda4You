@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.agenda.grupocuatro.model.Contact;
+import com.agenda.grupocuatro.model.Empleado;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
 import com.agenda.grupocuatro.services.ContactService;
+import com.agenda.grupocuatro.services.EmpleadoService;
 import com.agenda.grupocuatro.services.UsuarioAdminService;
 
 /**
@@ -29,17 +31,19 @@ public class AppController {
 	private ContactService contactService;
 	@Autowired
 	private UsuarioAdminService adminService;
+	@Autowired
+	private EmpleadoService empleadoService;
 
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
 		ModelAndView model = new ModelAndView("login");
 		return model;
 		
-	}
+	}*/
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newUser() {
-		ModelAndView model = new ModelAndView("UserForm");
+		ModelAndView model = new ModelAndView("userform");
 		model.addObject("contact", new Contact());
 		return model;		
 	}
@@ -48,7 +52,7 @@ public class AppController {
 	public ModelAndView editContact(HttpServletRequest request) {
 		int contactId = Integer.parseInt(request.getParameter("id"));
 		Contact contact = contactService.get(contactId);
-		ModelAndView model = new ModelAndView("UserForm");
+		ModelAndView model = new ModelAndView("userform");
 		model.addObject("contact", contact);
 		return model;		
 	}
@@ -63,7 +67,7 @@ public class AppController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public ModelAndView listar(){
 		List<Contact> listContacts = contactService.list();
-		ModelAndView model = new ModelAndView("Listado");
+		ModelAndView model = new ModelAndView("listado");
 		model.addObject("contactList", listContacts);
 		return model;
 	}
@@ -71,7 +75,7 @@ public class AppController {
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	public ModelAndView search(HttpServletRequest request){
 		List<Contact> listContacts = contactService.search(request.getParameter("selector"));
-		ModelAndView model = new ModelAndView("Listado");
+		ModelAndView model = new ModelAndView("listado");
 		model.addObject("contactList", listContacts);
 		return model;
 	}
@@ -83,23 +87,23 @@ public class AppController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView loginAdmin(HttpServletRequest request) {	
-		
-		Logger miLog = Logger.getLogger(AppController.class);
-		
-		miLog.log(Level.WARN, "requestn es: "+request.getParameter("password"));		
-
+	public ModelAndView loginAdmin(HttpServletRequest request) {			
 		
 		UsuarioAdmin admin = adminService.login(request.getParameter("usuario"), request.getParameter("password"));
 		
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("admin", admin );
-		
-		miLog.log(Level.WARN, "El usuario admin es: "+admin.toString() );		
-		
-		return new ModelAndView("redirect:/");		
-		
+		session.setAttribute("admin", admin );					
+		return new ModelAndView("redirect:/");				
 	}
 	
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public ModelAndView listaEmpleados(HttpServletRequest request) {		
+		
+		List<Empleado> empleados = empleadoService.listaEmpleados();
+		
+		ModelAndView model = new ModelAndView("listado");
+		model.addObject("listaEmpleados", empleados);
+		return model;		
+	}
 }
