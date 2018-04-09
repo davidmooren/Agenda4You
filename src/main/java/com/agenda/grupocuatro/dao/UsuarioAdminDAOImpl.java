@@ -34,10 +34,6 @@ public class UsuarioAdminDAOImpl implements UsuarioAdminDAO {
 	@Transactional
 	public UsuarioAdmin login(String nombre, String password) {
 		
-		Logger milog = Logger.getLogger(UsuarioAdminDAOImpl.class);
-		milog.log(Level.WARN, "paso por aqui gilipollas los dos");
-		
-		
 		String hql = "from UsuarioAdmin where usuario = '" + nombre + "' AND pass = '"+password +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
