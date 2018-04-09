@@ -24,11 +24,11 @@ public class Empleado {
 	
 @OneToOne
 @JoinColumn(name="idDepartamento", referencedColumnName="iddepartamento")
-	private Departamento idDepartamento;
+	private Departamento departamento;
 	
 @OneToOne
 @JoinColumn(name="idCategoria", referencedColumnName="idcategorias")
-	private Categorias idCategoria;
+	private Categorias categoria;
 	
 	
 	
@@ -45,8 +45,8 @@ public class Empleado {
 		this.codEmpleado = codEmpleado;
 		this.salario = salario;
 		this.fechaAlta = fechaAlta;
-		this.idDepartamento = idDepartamento;
-		this.idCategoria = idCategoria;
+		this.departamento = idDepartamento;
+		this.categoria = idCategoria;
 	}
 
 
@@ -99,26 +99,26 @@ public class Empleado {
 
 
 
-	public Departamento getIdDepartamento() {
-		return idDepartamento;
+	public Departamento getDepartamento() {
+		return departamento;
 	}
 
 
 
-	public void setIdDepartamento(Departamento idDepartamento) {
-		this.idDepartamento = idDepartamento;
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 
 
 
-	public Categorias getIdCategoria() {
-		return idCategoria;
+	public Categorias getCategoria() {
+		return categoria;
 	}
 
 
 
-	public void setIdCategoria(Categorias idCategoria) {
-		this.idCategoria = idCategoria;
+	public void setCategoria(Categorias categoria) {
+		this.categoria = categoria;
 	}
 
 	

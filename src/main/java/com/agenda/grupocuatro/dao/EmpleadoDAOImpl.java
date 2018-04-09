@@ -26,7 +26,6 @@ public class EmpleadoDAOImpl implements EmpleadoDAO{
 	@Override
 	@Transactional
 	public List<Empleado> listaEmpleados() {
-		
 
 		String hql = "from Empleado";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
