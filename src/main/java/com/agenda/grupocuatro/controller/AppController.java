@@ -87,8 +87,7 @@ public class AppController {
 		
 		Logger miLog = Logger.getLogger(AppController.class);
 		
-		miLog.log(Level.WARN, "requestn es: "+request.getParameter("password"));
-		
+		miLog.log(Level.WARN, "requestn es: "+request.getParameter("password"));		
 
 		
 		UsuarioAdmin admin = adminService.login(request.getParameter("usuario"), request.getParameter("password"));
@@ -97,10 +96,7 @@ public class AppController {
 		
 		session.setAttribute("admin", admin );
 		
-		miLog.log(Level.WARN, "El usuario admin es: "+admin.toString() );
-		
-		
-		
+		miLog.log(Level.WARN, "El usuario admin es: "+admin.toString() );		
 		
 		return new ModelAndView("redirect:/");		
 		

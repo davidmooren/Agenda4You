@@ -17,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.agenda.grupocuatro.model.Contact;
+import com.agenda.grupocuatro.model.UsuarioAdmin;
 
 @Configuration
 @ComponentScan("com.agenda.grupocuatro")
@@ -62,6 +63,7 @@ public class ApplicationContextConfig {
     	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
     	sessionBuilder.addProperties(getHibernateProperties());
     	sessionBuilder.addAnnotatedClasses(Contact.class);
+      	sessionBuilder.addAnnotatedClasses(UsuarioAdmin.class);
     	return sessionBuilder.buildSessionFactory();
     }
     
