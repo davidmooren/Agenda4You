@@ -36,10 +36,6 @@ public class EmpleadoDAOImpl extends TestCase implements EmpleadoDAO{
 		@SuppressWarnings("unchecked")
 		List<Empleado> empleados = (List<Empleado>) query.list();
 		
-		public void testSalario(){
-			assertEquals(true, Test.salarioCorrecto(empleados));
-		}
-		
 		if (empleados != null && !empleados.isEmpty()) {
 			return empleados;
 		}		
