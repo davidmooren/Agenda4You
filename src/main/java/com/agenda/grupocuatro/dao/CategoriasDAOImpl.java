@@ -61,6 +61,21 @@ public class CategoriasDAOImpl implements CategoriasDAO {
 		return null;
 	}
 
+	@Override
+	public Categorias get(int id) {
+		String hql = "from Categorias where idcategorias=" + id;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		Categorias listCategorias = (Categorias) query.uniqueResult();
+		
+		if (listCategorias != null) {
+			return listCategorias;
+		}
+		
+		return null;
+	}
+
 
 
 	

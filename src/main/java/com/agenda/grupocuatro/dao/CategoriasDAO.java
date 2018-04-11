@@ -12,4 +12,6 @@ public interface CategoriasDAO {
 
 	public List<Categorias> listaCaterogias();
 
+	public Categorias get(int id);
+
 }

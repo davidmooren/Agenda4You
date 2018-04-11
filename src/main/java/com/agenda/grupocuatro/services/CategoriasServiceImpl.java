@@ -36,6 +36,11 @@ public class CategoriasServiceImpl implements CategoriasService {
 		return categoriaDAO.listaCaterogias();
 	}
 
+	@Override
+	public Categorias get(int id) {		
+		return  categoriaDAO.get(id);
+	}
+
 	
 	
 

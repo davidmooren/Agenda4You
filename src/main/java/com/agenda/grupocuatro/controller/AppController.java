@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Empleado;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
+import com.agenda.grupocuatro.services.CategoriasService;
 import com.agenda.grupocuatro.services.ContactService;
 import com.agenda.grupocuatro.services.EmpleadoService;
 import com.agenda.grupocuatro.services.UsuarioAdminService;
@@ -32,7 +34,9 @@ public class AppController {
 	@Autowired
 	private UsuarioAdminService adminService;
 	@Autowired
-	private EmpleadoService empleadoService;
+	private EmpleadoService empleadoService;	
+	@Autowired
+	private CategoriasService categoriaService;
 
 	/*@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
@@ -116,4 +120,41 @@ public class AppController {
 		
 		return model;		
 	}
+	
+	
+	
+	@RequestMapping(value = "/newCategoria", method = RequestMethod.GET)
+	public ModelAndView newCategoria() {
+		ModelAndView model = new ModelAndView("categoriaform");
+		model.addObject("categoria", new Categorias());
+		return model;		
+	}
+	
+	@RequestMapping(value = "/editCategoria", method = RequestMethod.GET)
+	public ModelAndView editCategoria(HttpServletRequest request) {
+		int categoriatId = Integer.parseInt(request.getParameter("id"));
+		Categorias categoria = categoriaService.get(categoriatId);
+		ModelAndView model = new ModelAndView("categoriaform");
+		model.addObject("categoria", categoria);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/deleteCategoria", method = RequestMethod.GET)
+	public ModelAndView deleteCategoria(HttpServletRequest request) {
+		int categoriaId = Integer.parseInt(request.getParameter("id"));
+		categoriaService.baja(categoriaId);
+		return new ModelAndView("redirect:/listadocategorias");		
+	}
+	
+	@RequestMapping(value="/listCategorias", method=RequestMethod.GET)
+	public ModelAndView listarCategorias(){
+		List<Categorias> listaCategorias = categoriaService.listaCaterogias());
+		ModelAndView model = new ModelAndView("listadocategorias");
+		model.addObject("listaCategorias", listaCategorias);
+		return model;
+	}
+	
+	
+	
+	
 }
