@@ -26,7 +26,7 @@
 
 		</div>
 
-		<c:forEach var="categoria" items="${listaCategorias }">
+		<c:forEach var="categoria" items="${listaCategorias}">
 
 			<div class="row">
 
@@ -39,13 +39,13 @@
 				</div>
 
 				<div class="col-md-2">
-<a href="editCategoria?id=${categoria.id }">
+<a href="editCategoria?id=${categoria.idCategorias }">
 					<button>Modificar</button>
 </a>
 				</div>
 				
 				<div class="col-md-2">
-<a href="deleteCategoria?id=${categoria.id }">
+<a href="deleteCategoria?id=${categoria.idCategorias }">
 					<button>Eliminar</button>
 </a>
 				</div>
