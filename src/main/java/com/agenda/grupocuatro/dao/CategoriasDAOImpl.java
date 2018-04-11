@@ -67,10 +67,10 @@ public class CategoriasDAOImpl implements CategoriasDAO {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
-		Categorias listCategorias = (Categorias) query.uniqueResult();
+		Categorias categoria = (Categorias) query.uniqueResult();
 		
-		if (listCategorias != null) {
-			return listCategorias;
+		if (categoria != null) {
+			return categoria;
 		}
 		
 		return null;
