@@ -6,10 +6,12 @@ import com.agenda.grupocuatro.model.Departamento;
 
 public interface DepartamentoService {
 
-	List<Departamento> listaDepartamentos();
+	public List<Departamento> listaDepartamentos();
 	
-	void altaOupdate(Departamento departamento);
+	public void altaOupdate(Departamento departamento);
 	
-	void baja(int idDepartamento);
+	public void baja(int idDepartamento);
+	
+	public Departamento get(int id);
 	
 }

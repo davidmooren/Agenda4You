@@ -21,12 +21,12 @@
 					<li><a href="#">b</a></li>
 					<li><a href="#">c</a></li>
 					<li><a href="#">d</a></li>
-					<c:if test="${not empty cliente_logeado }">
+					<c:if test="${not empty admin }">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">Opciones <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"></a></li>
+								<li><a href="listCategorias"></a></li>
 								<li><a href="#"></a></li>
 								<li><a href="#"></a></li>
 							</ul>
@@ -47,7 +47,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
-						<c:when test="${empty cliente_logeado}">
+						<c:when test="${empty admin}">
 							<li><a href="login"><span
 									class="glyphicon glyphicon-user"></span> Acceso</a></li>
 						</c:when>

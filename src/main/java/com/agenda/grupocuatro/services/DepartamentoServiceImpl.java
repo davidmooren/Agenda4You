@@ -19,7 +19,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 	
 	@Override
 	public List<Departamento> listaDepartamentos() {
-		return null;
+		return departamentoDAO.listaDepartamentos();
 	}
 
 	@Override
@@ -28,6 +28,11 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 
 	@Override
 	public void baja(int idDepartamento) {
+	}
+
+	@Override
+	public Departamento get(int id) {
+		return departamentoDAO.get(id);
 	}
 
 	
