@@ -16,10 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
+import com.agenda.grupocuatro.model.Departamento;
 import com.agenda.grupocuatro.model.Empleado;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
 import com.agenda.grupocuatro.services.CategoriasService;
 import com.agenda.grupocuatro.services.ContactService;
+import com.agenda.grupocuatro.services.DepartamentoService;
 import com.agenda.grupocuatro.services.EmpleadoService;
 import com.agenda.grupocuatro.services.UsuarioAdminService;
 
@@ -37,6 +39,8 @@ public class AppController {
 	private EmpleadoService empleadoService;	
 	@Autowired
 	private CategoriasService categoriaService;
+	@Autowired
+	private DepartamentoService departamentoService;
 
 	/*@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
@@ -154,7 +158,49 @@ public class AppController {
 		return model;
 	}
 	
+	@RequestMapping(value = "/saveCategoria", method = RequestMethod.POST)
+	public ModelAndView saveCategoria(@ModelAttribute Categorias categoria) {
+		categoriaService.altaOupdate(categoria);
+		return new ModelAndView("redirect:/");
+	}
 	
 	
+	
+	@RequestMapping(value ="/newDepartamento", method=RequestMethod.GET)
+	public ModelAndView newDepartamento(){
+		ModelAndView model = new ModelAndView("departamentoform");
+		model.addObject("departamento", new Departamento());
+		return model;
+	}
+	
+	@RequestMapping(value ="/editDepartamento", method=RequestMethod.GET)
+	public ModelAndView editDepartamento(HttpServletRequest request){
+		int departamentoId = Integer.parseInt(request.getParameter("id"));
+		Departamento departamento = departamentoService.get(departamentoId);
+		ModelAndView model = new ModelAndView("departamentoform");
+		model.addObject("departamento", departamento);
+		return model;
+	}
+	
+	@RequestMapping(value ="/deleteDepartamento", method=RequestMethod.GET)
+	public ModelAndView deleteDepartamento(HttpServletRequest request){
+		int departamentoId = Integer.parseInt(request.getParameter("id"));
+		categoriaService.baja(departamentoId);
+		return new ModelAndView("redirect:/listadodepartamentos");
+	}
+	
+	@RequestMapping(value="/listDepartamentos", method=RequestMethod.GET)
+	public ModelAndView listarDepartamentos(){
+		List<Departamento> listaDepartamentos = departamentoService.listaDepartamentos();
+		ModelAndView model = new ModelAndView("listadodepartamentos");
+		model.addObject("listaDepartamentos", listaDepartamentos);
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveDepartamento", method = RequestMethod.POST)
+	public ModelAndView saveDepartamento(@ModelAttribute Departamento departamento) {
+		departamentoService.altaOupdate(departamento);
+		return new ModelAndView("redirect:/");
+	}
 	
 }
