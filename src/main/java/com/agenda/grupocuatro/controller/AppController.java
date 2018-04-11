@@ -107,6 +107,8 @@ public class AppController {
 		return new ModelAndView("redirect:/");				
 	}
 	
+	
+	/*Inicio empleados*/
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView listaEmpleados(HttpServletRequest request) {		
 		
@@ -116,6 +118,42 @@ public class AppController {
 		model.addObject("listaEmpleados", empleados);
 		return model;		
 	}
+	@RequestMapping(value = "/newEmpleado", method = RequestMethod.GET)
+	public ModelAndView newEmpleado() {
+		ModelAndView model = new ModelAndView("empleadoform");
+		model.addObject("empleado", new Empleado());
+		return model;		
+	}
+	
+	@RequestMapping(value = "/editEmpleado", method = RequestMethod.GET)
+	public ModelAndView editEmpleado(HttpServletRequest request) {
+		int empleadoId = Integer.parseInt(request.getParameter("id"));
+		Empleado empleado = empleadoService.get(empleadoId);
+		ModelAndView model = new ModelAndView("empleadoform");
+		model.addObject("empleado", empleado);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/deleteEmpleado", method = RequestMethod.GET)
+	public ModelAndView deleteEmpleado(HttpServletRequest request) {
+		int empleadoId = Integer.parseInt(request.getParameter("id"));
+		categoriaService.baja(empleadoId);
+		return new ModelAndView("redirect:/");		
+	}
+	
+	
+	@RequestMapping(value = "/saveEmpleado", method = RequestMethod.POST)
+	public ModelAndView saveEmpleado(@ModelAttribute Empleado empleado) {
+		empleadoService.altaOupdate(empleado);
+		return new ModelAndView("redirect:/");
+	}
+	
+	
+	
+	
+	/*Fin empleados*/
+	
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView irALogin() {		
@@ -136,8 +174,8 @@ public class AppController {
 	
 	@RequestMapping(value = "/editCategoria", method = RequestMethod.GET)
 	public ModelAndView editCategoria(HttpServletRequest request) {
-		int categoriatId = Integer.parseInt(request.getParameter("id"));
-		Categorias categoria = categoriaService.get(categoriatId);
+		int categoriaId = Integer.parseInt(request.getParameter("id"));
+		Categorias categoria = categoriaService.get(categoriaId);
 		ModelAndView model = new ModelAndView("categoriaform");
 		model.addObject("categoria", categoria);
 		return model;		
