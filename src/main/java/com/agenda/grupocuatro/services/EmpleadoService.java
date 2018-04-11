@@ -2,15 +2,18 @@ package com.agenda.grupocuatro.services;
 
 import java.util.List;
 
+
 import com.agenda.grupocuatro.model.Empleado;
 
 public interface EmpleadoService {
 
-	List<Empleado> listaEmpleados();
+	public List<Empleado> listaEmpleados();
 	
 	
-	void altaOupdate(Empleado empleado);
+	public void altaOupdate(Empleado empleado);
 	
 	
-	void baja (int idEmpleado);
+	public void baja (int idEmpleado);
+	
+	public Empleado get(int id);
 }

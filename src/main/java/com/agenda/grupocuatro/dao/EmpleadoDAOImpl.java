@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.agenda.grupocuatro.model.Categorias;
+
 import com.agenda.grupocuatro.model.Empleado;
 
 @Repository
@@ -43,6 +43,7 @@ public class EmpleadoDAOImpl implements EmpleadoDAO{
 	}
 
 	@Override
+	@Transactional
 	public void altaOupdate(Empleado empleado) {
 		// TODO Auto-generated method stub
 		
@@ -50,11 +51,29 @@ public class EmpleadoDAOImpl implements EmpleadoDAO{
 	}
 
 	@Override
-	public void baja(int idEmpleado) {
+	@Transactional
+	public void baja(int idEmpleados) {
 		// TODO Auto-generated method stub
 		Empleado empleadoABorrar = new Empleado();
-		empleadoABorrar.setIdempleados(idEmpleado);
+		empleadoABorrar.setIdempleados(idEmpleados);
 		sessionFactory.getCurrentSession().delete(empleadoABorrar);
+	}
+
+
+	@Override
+	@Transactional
+	public Empleado get(int id) {
+		String hql = "from Empleado where idempleados=" + id;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		Empleado empleado = (Empleado) query.uniqueResult();
+		
+		if (empleado != null) {
+			return empleado;
+		}
+		
+		return null;
 	}
 
 }

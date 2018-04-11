@@ -32,6 +32,12 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Empleado get(int id) {
+		// TODO Auto-generated method stub
+		return empleadoDAO.get(id);
+	}
 	
 	
 
