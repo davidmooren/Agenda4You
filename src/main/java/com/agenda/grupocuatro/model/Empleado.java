@@ -5,8 +5,6 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,12 +21,12 @@ public class Empleado {
 	private String salario;
 	private Date fechaAlta;
 	
-	@OneToOne
-	@JoinColumn(name="idDepartamento", referencedColumnName="iddepartamento")
+@OneToOne
+//@JoinColumn(name="idDepartamento", referencedColumnName="iddepartamento")
 	private Departamento departamento;
 	
-	@OneToOne
-	@JoinColumn(name="idCategoria", referencedColumnName="idcategorias")
+@OneToOne
+//@JoinColumn(name="idCategoria", referencedColumnName="idcategorias")
 	private Categorias categorias;
 	
 	

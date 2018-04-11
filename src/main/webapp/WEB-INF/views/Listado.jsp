@@ -40,6 +40,51 @@
 				</tr>
 			</c:forEach>
 		</table>
+<<<<<<< HEAD
+=======
+	</div>-->
+
+
+	<div class="container contenedorprincipal">
+
+		<div class="col-md-12">
+
+			<div class="row">
+
+				<div class="col-md-offset-2 col-md-3">
+					<h3>Empleado</h3>
+				</div>
+				<div class="col-md-3">
+					<h3>Nombre departamento</h3>
+				</div>
+
+			</div>
+
+			<c:forEach var="empleado" items="${listaEmpleados }">
+
+				<div class="row">
+				
+					<div class="col-md-offset-2 col-md-3">
+						<p>${empleado.idempleado }</p>
+					</div>
+					
+					<div class="col-md-3">
+						<p>${empleado.nombre }</p>
+					</div>
+					
+					<div class="col-md-2">
+					
+						<button>Ver detalle</button>
+					
+					</div>
+				
+				</div>
+
+			</c:forEach>
+
+		</div>
+
+>>>>>>> parent of 73da74a... commit
 	</div>
 </body>
 </html>
