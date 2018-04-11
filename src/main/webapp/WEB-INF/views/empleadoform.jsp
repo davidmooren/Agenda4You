@@ -41,12 +41,12 @@
 				<tr>
 				<tr>
 					<td>id Departamento:</td>
-					<td><form:input path="idDepartamento" /></td>
+					<td><form:input path="departamento.iddepartamento" /></td>
 				</tr>
 				<tr>
 				<tr>
 					<td>id  Categoría:</td>
-					<td><form:input path="idCategoria" /></td>
+					<td><form:input path="categorias.idCategorias" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"

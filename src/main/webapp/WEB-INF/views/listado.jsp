@@ -76,12 +76,16 @@
 
 				<c:if test="${not empty admin}">
 					<div class="col-md-2">
+					<a href="editEmpleado?id=${empleado.idempleados }">
 						<button>Modificar</button>
+						</a>
 					</div>
 				</c:if>
 				<c:if test="${not empty admin}">
 					<div class="col-md-2">
+						<a href="deleteEmpleado?id=${empleado.idempleados }">
 						<button>Borrar</button>
+						</a>
 					</div>
 				</c:if>
 
