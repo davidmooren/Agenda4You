@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <jsp:include page="../component/imports.jsp" />
 
-<title>Modificar categoria</title>
+<title>Formulario  categoria</title>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 				<h1>FORMULARIO DE CATEGORIA</h1>
 				<table>
 					<form:form action="saveCategoria" method="post" modelAttribute="categoria">
-						<form:hidden path="id" />
+						<form:hidden path="idCategorias" />
 						<tr>
 							<td>Nombre:</td>
 							<td><form:input path="nombre" /></td>
