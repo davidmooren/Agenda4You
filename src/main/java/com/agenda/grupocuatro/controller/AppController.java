@@ -148,7 +148,7 @@ public class AppController {
 	
 	@RequestMapping(value="/listCategorias", method=RequestMethod.GET)
 	public ModelAndView listarCategorias(){
-		List<Categorias> listaCategorias = categoriaService.listaCaterogias());
+		List<Categorias> listaCategorias = categoriaService.listaCaterogias();
 		ModelAndView model = new ModelAndView("listadocategorias");
 		model.addObject("listaCategorias", listaCategorias);
 		return model;
