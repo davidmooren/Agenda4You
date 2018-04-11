@@ -8,9 +8,9 @@ import com.agenda.grupocuatro.model.Contact;
 
 public interface CategoriasService {
 
-	void altaOupdate(Categorias categoria);
-	void baja(int id);
-	List<Categorias> listaCaterogias();	
+	public void altaOupdate(Categorias categoria);
+	public	void baja(int id);
+	public List<Categorias> listaCaterogias();	
 	public Categorias get(int id);
 
 }
