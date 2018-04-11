@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import com.agenda.grupocuatro.model.Persona;
+import com.agenda.grupocuatro.model.Personas;
 
 @Entity
 @Table(name = "direcciones")
@@ -24,7 +24,7 @@ public class Direcciones {
 	
 	@ManyToOne
 	@JoinColumn (name="idPersona", referencedColumnName="idPersona")
-	private Persona persona;
+	private Personas persona;
 	
 	
 	public Direcciones () {
@@ -33,7 +33,7 @@ public class Direcciones {
 
 
 	public Direcciones(int iddirecciones, String direccion, String codPostal, String localidad, String provincia,
-			Persona persona) {
+			Personas persona) {
 		super();
 		this.iddirecciones = iddirecciones;
 		this.direccion = direccion;
@@ -94,12 +94,12 @@ public class Direcciones {
 	}
 
 
-	public Persona getPersona() {
+	public Personas getPersona() {
 		return persona;
 	}
 
 
-	public void setPersona(Persona persona) {
+	public void setPersona(Personas persona) {
 		this.persona = persona;
 	}
 	
