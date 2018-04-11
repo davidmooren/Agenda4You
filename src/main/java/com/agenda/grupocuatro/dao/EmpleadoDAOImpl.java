@@ -8,12 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.agenda.grupocuatro.model.Empleado;
-import com.agenda.grupocuatro.test.Test;
-
-import junit.framework.TestCase;
 
 @Repository
-public class EmpleadoDAOImpl extends TestCase implements EmpleadoDAO{
+public class EmpleadoDAOImpl implements EmpleadoDAO{
 
 	@Autowired
 	private SessionFactory sessionFactory;
