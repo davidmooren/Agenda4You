@@ -8,4 +8,9 @@ public interface EmpleadoService {
 
 	List<Empleado> listaEmpleados();
 	
+	
+	void altaOupdate(Empleado empleado);
+	
+	
+	void baja (int idEmpleado);
 }
