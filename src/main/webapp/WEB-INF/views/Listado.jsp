@@ -79,11 +79,11 @@
 				<div class="row">
 				
 					<div class="col-md-offset-2 col-md-3">
-						<p>${empleado.idempleado }</p>
+						<p>${empleado.idempleados }</p>
 					</div>
 					
 					<div class="col-md-3">
-						<p>${empleado.nombre }</p>
+						<p>${empleado.codEmpleado }</p>
 					</div>
 					
 					<div class="col-md-2">
