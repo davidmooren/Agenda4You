@@ -8,7 +8,9 @@ public interface EmpleadoDAO {
 	
 	public List<Empleado> listaEmpleados();
 
-	void altaOupdate(Empleado empleado);
+	public void altaOupdate(Empleado empleado);
 		
-	void baja(int idEmpleado);
+	public void baja(int idEmpleado);
+	
+	public Empleado get(int id);
 }
