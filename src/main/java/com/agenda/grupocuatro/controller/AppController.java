@@ -161,7 +161,7 @@ public class AppController {
 	@RequestMapping(value = "/saveCategoria", method = RequestMethod.POST)
 	public ModelAndView saveCategoria(@ModelAttribute Categorias categoria) {
 		categoriaService.altaOupdate(categoria);
-		return new ModelAndView("redirect:/listadocategorias");
+		return new ModelAndView("redirect:/listCategorias");
 	}
 	
 	
@@ -200,7 +200,7 @@ public class AppController {
 	@RequestMapping(value = "/saveDepartamento", method = RequestMethod.POST)
 	public ModelAndView saveDepartamento(@ModelAttribute Departamento departamento) {
 		departamentoService.altaOupdate(departamento);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/listDepartamento");
 	}
 	
 }
