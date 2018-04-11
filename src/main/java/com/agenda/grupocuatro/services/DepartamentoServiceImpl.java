@@ -24,10 +24,12 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 
 	@Override
 	public void altaOupdate(Departamento departamento) {
+		departamentoDAO.altaOupdate(departamento);
 	}
 
 	@Override
 	public void baja(int idDepartamento) {
+		departamentoDAO.baja(idDepartamento);
 	}
 
 	@Override

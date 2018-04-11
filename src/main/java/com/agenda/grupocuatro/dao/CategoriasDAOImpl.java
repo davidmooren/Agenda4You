@@ -61,6 +61,7 @@ public class CategoriasDAOImpl implements CategoriasDAO {
 		return null;
 	}
 
+	@Transactional
 	@Override
 	public Categorias get(int id) {
 		String hql = "from Categorias where idcategorias=" + id;
