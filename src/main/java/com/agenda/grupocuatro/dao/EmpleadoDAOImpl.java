@@ -7,11 +7,13 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Empleado;
 
 @Repository
 public class EmpleadoDAOImpl implements EmpleadoDAO{
 
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -38,6 +40,21 @@ public class EmpleadoDAOImpl implements EmpleadoDAO{
 		}		
 		
 		return null;
+	}
+
+	@Override
+	public void altaOupdate(Empleado empleado) {
+		// TODO Auto-generated method stub
+		
+		sessionFactory.getCurrentSession().saveOrUpdate(empleado);
+	}
+
+	@Override
+	public void baja(int idEmpleado) {
+		// TODO Auto-generated method stub
+		Empleado empleadoABorrar = new Empleado();
+		empleadoABorrar.setIdempleados(idEmpleado);
+		sessionFactory.getCurrentSession().delete(empleadoABorrar);
 	}
 
 }

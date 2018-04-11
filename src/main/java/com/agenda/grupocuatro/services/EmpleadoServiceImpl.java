@@ -22,6 +22,19 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		return empleadoDAO.listaEmpleados();
 	}
 
+	@Override
+	public void altaOupdate(Empleado empleado) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void baja(int idEmpleado) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
 }
 
 
