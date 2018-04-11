@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <jsp:include page="../component/imports.jsp" />
 
-<title>LISTADO DE CATEGORIAS</title>
+<title>LISTADO DE DEPARTAMENTOS</title>
 </head>
 <body>
 <jsp:include page="../component/header.jsp" />
