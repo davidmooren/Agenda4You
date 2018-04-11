@@ -1,11 +1,12 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login Admin</title>
 
-<jsp:include page="../component/imports_comunes.html" />
+<jsp:include page="../component/imports.jsp" />
 </head>
 <body>
 
@@ -16,7 +17,7 @@
 
 			<div class="main">
 
-				<form action="login" method="POST">
+				<form action="logear" method="POST">
 
 					<div class="form-group">
 						<label for="usuario">Indique su nombre de usuario:</label> <input
@@ -39,6 +40,8 @@
 		</div>
 	</div>
 
+
 	<jsp:include page="../component/footer.jsp" />
+		
 </body>
 </html>

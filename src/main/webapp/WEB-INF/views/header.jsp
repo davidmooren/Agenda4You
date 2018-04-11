@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <header class="container header-menu">
 
 	<nav class="navbar navbar-inverse">
@@ -21,7 +22,7 @@
 					<li><a href="#"></a></li>
 					<li><a href="#"></a></li>
 					<li><a href="#"></a></li>
-					<c:if test="${not empty cliente_logeado }">
+					<c:if test="${not empty admin }">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">Opciones <span class="caret"></span></a>
@@ -47,18 +48,16 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
-						<c:when test="${empty cliente_logeado}">
+						<c:when test="${empty admin}">
 							<li><a href="login_cliente.jsp"><span
 									class="glyphicon glyphicon-user"></span> Acceso</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="DesconectarUsuario"><span
-									class="glyphicon glyphicon-user"></span> Desconectar</a></li>
+							<li><a href=""><span	class="glyphicon glyphicon-user"></span> Desconectar</a></li>
 
-							<li class="usuario_logeado_header">${cliente_logeado.nombre}</li>
+							<li class="usuario_logeado_header">${admin.usuario}</li>
 						</c:otherwise>
-					</c:choose>
-					
+					</c:choose>					
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

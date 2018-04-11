@@ -86,13 +86,15 @@ public class AppController {
 		return new ModelAndView("redirect:/");
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/logear", method = RequestMethod.POST)
 	public ModelAndView loginAdmin(HttpServletRequest request) {			
 		
 		UsuarioAdmin admin = adminService.login(request.getParameter("usuario"), request.getParameter("password"));
 		
 		HttpSession session = request.getSession();
 		
+		Logger loger = Logger.getLogger("Controlador - ");
+		loger.log(Level.WARN, admin.getUsuario());
 		session.setAttribute("admin", admin );					
 		return new ModelAndView("redirect:/");				
 	}
@@ -104,6 +106,14 @@ public class AppController {
 		
 		ModelAndView model = new ModelAndView("listado");
 		model.addObject("listaEmpleados", empleados);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView irALogin() {		
+				
+		ModelAndView model = new ModelAndView("login");
+		
 		return model;		
 	}
 }
