@@ -24,13 +24,12 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Override
 	public void altaOupdate(Empleado empleado) {
-		// TODO Auto-generated method stub
+		empleadoDAO.altaOupdate(empleado);
 	}
 
 	@Override
 	public void baja(int idEmpleado) {
-		// TODO Auto-generated method stub
-		
+		empleadoDAO.baja(idEmpleado);
 	}
 
 	@Override
