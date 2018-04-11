@@ -147,7 +147,7 @@ public class AppController {
 	public ModelAndView deleteCategoria(HttpServletRequest request) {
 		int categoriaId = Integer.parseInt(request.getParameter("id"));
 		categoriaService.baja(categoriaId);
-		return new ModelAndView("redirect:/listadocategorias");		
+		return new ModelAndView("redirect:/listCategorias");		
 	}
 	
 	@RequestMapping(value="/listCategorias", method=RequestMethod.GET)
