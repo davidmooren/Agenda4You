@@ -90,6 +90,7 @@
 					
 						<button>Ver detalle</button>
 					
+					
 					</div>
 				
 				</div>
