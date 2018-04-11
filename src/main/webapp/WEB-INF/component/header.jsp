@@ -27,7 +27,7 @@
 							aria-expanded="false">Opciones <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="listCategorias">Categorias</a></li>
-								<li><a href="#"></a></li>
+								<li><a href="listDepartamentos">Departamentos</a></li>
 								<li><a href="#"></a></li>
 							</ul>
 						</li>
