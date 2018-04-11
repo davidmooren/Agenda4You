@@ -17,10 +17,10 @@
 			<div id="navbar" class="navbar-collapse collapse"
 				aria-expanded="false" style="height: 1px;">
 				<ul class="nav navbar-nav">
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
+					<li><a href="#">a</a></li>
+					<li><a href="#">b</a></li>
+					<li><a href="#">c</a></li>
+					<li><a href="#">d</a></li>
 					<c:if test="${not empty cliente_logeado }">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -48,7 +48,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
 						<c:when test="${empty cliente_logeado}">
-							<li><a href="login_cliente.jsp"><span
+							<li><a href="login"><span
 									class="glyphicon glyphicon-user"></span> Acceso</a></li>
 						</c:when>
 						<c:otherwise>
