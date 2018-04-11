@@ -12,7 +12,7 @@
 <title>LISTADO DE CATEGORIAS</title>
 </head>
 <body>
-<jsp:include page="../component/header.jsp" />
+	<jsp:include page="../component/header.jsp" />
 
 	<c:if test="${empty admin}">
 		<c:redirect url="/" />
@@ -20,7 +20,13 @@
 
 	<div class="container contenedorprincipal">
 		<div class="row">
-
+		<div class="col-md-offset-5 col-md-2 center"><a href="newCategoria">
+						<button>Nueva Categoria</button>
+					</a></div>
+		</div>
+		
+		
+		<div class="row">
 			<div class="col-md-offset-2 col-md-3">
 				<h3>Nombre</h3>
 			</div>
@@ -43,15 +49,15 @@
 				</div>
 
 				<div class="col-md-2">
-<a href="editCategoria?id=${categoria.idCategorias }">
-					<button>Modificar</button>
-</a>
+					<a href="editCategoria?id=${categoria.idCategorias }">
+						<button>Modificar</button>
+					</a>
 				</div>
-				
+
 				<div class="col-md-2">
-<a href="deleteCategoria?id=${categoria.idCategorias }">
-					<button>Eliminar</button>
-</a>
+					<a href="deleteCategoria?id=${categoria.idCategorias }">
+						<button>Eliminar</button>
+					</a>
 				</div>
 
 			</div>

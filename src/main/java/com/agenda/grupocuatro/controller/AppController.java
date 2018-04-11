@@ -185,7 +185,7 @@ public class AppController {
 	public ModelAndView deleteCategoria(HttpServletRequest request) {
 		int categoriaId = Integer.parseInt(request.getParameter("id"));
 		categoriaService.baja(categoriaId);
-		return new ModelAndView("redirect:/listadocategorias");		
+		return new ModelAndView("redirect:/listCategorias");		
 	}
 	
 	@RequestMapping(value="/listCategorias", method=RequestMethod.GET)
@@ -238,7 +238,7 @@ public class AppController {
 	@RequestMapping(value = "/saveDepartamento", method = RequestMethod.POST)
 	public ModelAndView saveDepartamento(@ModelAttribute Departamento departamento) {
 		departamentoService.altaOupdate(departamento);
-		return new ModelAndView("redirect:/listDepartamento");
+		return new ModelAndView("redirect:/listDepartamentos");
 	}
 	
 }
