@@ -40,4 +40,16 @@ public class EmpleadoDAOImpl implements EmpleadoDAO{
 		return null;
 	}
 
+	@Override
+	public void altaOupdate(Empleado empleado) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void baja(int idEmpleado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
