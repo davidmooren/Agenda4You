@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,7 +19,7 @@ public class Empleado {
 	private int idempleados;
 
 	private String codEmpleado;
-	private String salario;
+	private int salario;
 	private Date fechaAlta;
 	
 	@OneToOne
@@ -39,7 +38,7 @@ public class Empleado {
 
 
 
-	public Empleado(int idempleado, String codEmpleado, String salario, Date fechaAlta, Departamento idDepartamento,
+	public Empleado(int idempleado, String codEmpleado, int salario, Date fechaAlta, Departamento idDepartamento,
 			Categorias idCategoria) {
 		super();
 		this.idempleados = idempleado;
@@ -76,13 +75,13 @@ public class Empleado {
 
 
 
-	public String getSalario() {
+	public int getSalario() {
 		return salario;
 	}
 
 
 
-	public void setSalario(String salario) {
+	public void setSalario(int salario) {
 		this.salario = salario;
 	}
 

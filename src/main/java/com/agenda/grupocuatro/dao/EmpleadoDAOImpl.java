@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.agenda.grupocuatro.model.Empleado;
+import com.agenda.grupocuatro.test.Test;
+
+import junit.framework.TestCase;
 
 @Repository
-public class EmpleadoDAOImpl implements EmpleadoDAO{
+public class EmpleadoDAOImpl extends TestCase implements EmpleadoDAO{
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -33,9 +36,13 @@ public class EmpleadoDAOImpl implements EmpleadoDAO{
 		@SuppressWarnings("unchecked")
 		List<Empleado> empleados = (List<Empleado>) query.list();
 		
+		public void testSalario(){
+			assertEquals(true, Test.salarioCorrecto(empleados));
+		}
+		
 		if (empleados != null && !empleados.isEmpty()) {
 			return empleados;
-		}
+		}		
 		
 		return null;
 	}
