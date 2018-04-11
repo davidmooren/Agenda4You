@@ -7,32 +7,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
-
-<spring:url value="static/css/custom.css" var="custom" />
-<link href="${custom}" rel="stylesheet" />
+        <spring:url value="static/css/bootstrap.css" var="bootstrap"/>
+        <link href="${bootstrap}" rel="stylesheet" />
+        <spring:url value="static/css/custom.css" var="custom"/>
+        <link href="${custom}" rel="stylesheet" />  
 
 <title>LISTADO DE USUARIOS</title>
 </head>
 <body>
-
-
-	<!--	<div align="center">
+	<div align="center">
 		<h1>LISTADO DE CONTACTOS</h1>
 
 		<table border="1">
@@ -56,6 +40,8 @@
 				</tr>
 			</c:forEach>
 		</table>
+<<<<<<< HEAD
+=======
 	</div>-->
 
 
@@ -79,11 +65,11 @@
 				<div class="row">
 				
 					<div class="col-md-offset-2 col-md-3">
-						<p>${empleado.idempleados }</p>
+						<p>${empleado.idempleado }</p>
 					</div>
 					
 					<div class="col-md-3">
-						<p>${empleado.codEmpleado }</p>
+						<p>${empleado.nombre }</p>
 					</div>
 					
 					<div class="col-md-2">
@@ -99,8 +85,7 @@
 
 		</div>
 
+>>>>>>> parent of 73da74a... commit
 	</div>
-
-
 </body>
 </html>
