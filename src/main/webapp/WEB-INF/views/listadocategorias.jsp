@@ -14,6 +14,10 @@
 <body>
 <jsp:include page="../component/header.jsp" />
 
+	<c:if test="${empty admin}">
+		<c:redirect url="/" />
+	</c:if>
+
 	<div class="container contenedorprincipal">
 		<div class="row">
 
