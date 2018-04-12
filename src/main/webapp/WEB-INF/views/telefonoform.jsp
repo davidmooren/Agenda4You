@@ -23,27 +23,15 @@
 		<div class="row">
 
 			<div align="center">
-				<h1>FORMULARIO DE DIRECCIONES</h1>
+				<h1>FORMULARIO DE TELÉFONOS</h1>
 				<table>
-					<form:form action="saveDireccion" method="post" modelAttribute="direccion">
-						<form:hidden path="iddirecciones" />
+					<form:form action="saveTeléfono" method="post" modelAttribute="telefono">
+						<form:hidden path="idtelefonos" />
 						<tr>
-							<td>Dirección:</td>
-							<td><form:input path="direccion" /></td>
-						</tr>
-						<tr>
-							<td>Código Postal:</td>
-							<td><form:input path="codPostal" /></td>
+							<td>Teléfono:</td>
+							<td><form:input path="telefono" /></td>
 						</tr>
 						
-						<tr>
-							<td>Localidad:</td>
-							<td><form:input path="localidad" /></td>
-						</tr>
-						<tr>
-							<td>Provincia:</td>
-							<td><form:input path="provincia" /></td>
-						</tr>
 						<tr>
 							<td>id  Persona:</td>
 							<td><form:input path="personas.idPersonas" /></td>
