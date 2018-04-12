@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.agenda.grupocuatro.model.Empleado;
 
-public class Test {
+public class TestEmpleado {
 
 	public static boolean salarioCorrecto(List<Empleado> lista){
 		
