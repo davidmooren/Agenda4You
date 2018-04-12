@@ -17,7 +17,7 @@
 
 	<div class="container contenedorprincipal">
 		<div class="row">
-			<div class="col-md-12 center">
+			<div class="col-md-12 centrar">
 				<h1 class="center">BIENVENIDO A LA AGENDA4YOU</h1>
 			</div>
 
