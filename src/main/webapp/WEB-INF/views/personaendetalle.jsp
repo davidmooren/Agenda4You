@@ -25,16 +25,16 @@
 			<div class="col-md-12 titulo">
 				<h4>Telefonos del usuario:</h4>
 			</div>
-			<c:forEach var="telefono" items=">  ${persona.telefonosCollection }">
+			<c:forEach var="telefono" items="${persona.telefonosCollection }">
 				<div class="col-md-12 centrar">
-					<p class="glyphicon glyphicon-earphone">${telefono.telefono }</p>
+					<p class="glyphicon glyphicon-earphone"> ${telefono.telefono }</p>
 				</div>
 			</c:forEach>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12 titulo">
-				<h4 class="glyphicon glyphicon-sunglasses">Empleado:</h4>
+				<h4 class="glyphicon glyphicon-sunglasses"> Empleado:</h4>
 			</div>
 
 			<div class="col-md-offset-1 col-md-2 centrar">
