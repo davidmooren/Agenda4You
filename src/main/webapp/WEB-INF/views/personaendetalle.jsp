@@ -15,14 +15,14 @@
 	<jsp:include page="../component/header.jsp" />
 
 	<div class="container contenedorprincipal">
-		<div class="row">
+		<div class="row titulo">
 			<div class="col-md-12 centrar">
 				<h3>${persona.nombre } ${persona.apellido1 } ${persona.apellido2 }</h3>
 			</div>
 		</div>
 				
-		<div class="row">
-			<div class="col-md-12 titulo">
+		<div class="row titulo">
+			<div class="col-md-12 ">
 				<h4>Telefonos del usuario:</h4>
 			</div>
 			<c:forEach var="telefono" items="${persona.telefonosCollection }">
@@ -32,8 +32,8 @@
 			</c:forEach>
 		</div>
 
-		<div class="row">
-			<div class="col-md-12 titulo">
+		<div class="row titulo">
+			<div class="col-md-12 ">
 				<h4 class="glyphicon glyphicon-sunglasses"> Empleado:</h4>
 			</div>
 
@@ -49,7 +49,32 @@
 			<div class="col-md-3 ">
 				<p>${persona.empleado.salario }</p>
 			</div>
+		</div>
+		
+				<div class="row titulo">
+			<div class="col-md-12 ">
+				<h4 class="glyphicon glyphicon-sunglasses"> Departamento:</h4>
+			</div>
 
+			<div class="col-md-2 centrar">
+				<p>Trabaja en departamento:</p>
+			</div>
+			<div class="col-md-2">
+				<p>${persona.empleado.departamento.nombre }</p>
+			</div>
+			<div class="col-md-2 centrar">
+				<p>Con la categoría:</p>
+			</div>
+			<div class="col-md-2 ">
+				<p>${persona.empleado.categorias.nombre }</p>
+			</div>
+			
+			<div class="col-md-2 centrar">
+				<p>Descripción:</p>
+			</div>
+			<div class="col-md-2 ">
+				<p>${persona.empleado.categorias.descripcion }</p>
+			</div>
 		</div>
 
 

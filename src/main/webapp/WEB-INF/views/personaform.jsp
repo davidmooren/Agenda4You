@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <jsp:include page="../component/imports.jsp" />
 
-<title>Formulario Empleado</title>
+<title>Formulario  Persona</title>
 </head>
 <body>
 
@@ -23,33 +23,38 @@
 		<div class="row">
 
 			<div align="center">
-				<h1>FORMULARIO DE EMPLEADOS</h1>
+				<h1>FORMULARIO DE PERSONA</h1>
 				<table>
-					<form:form action="saveEmpleado" method="post"
-						modelAttribute="empleado">
-						<form:hidden path="idempleados" />
+					<form:form action="savePersona" method="post" modelAttribute="persona">
+						<form:hidden path="idpersonas" />
 						<tr>
-							<td>Código empleado:</td>
-							<td><form:input path="codEmpleado" /></td>
+							<td>Nombre:</td>
+							<td><form:input path="nombre" /></td>
 						</tr>
 						<tr>
-							<td>Salario:</td>
-							<td><form:input path="salario" /></td>
+							<td>Apellido 1:</td>
+							<td><form:input path="apellido1" /></td>
 						</tr>
 						<tr>
-							<td>Fecha alta:</td>
-							<td><form:input path="fechaAlta" /></td>
+							<td>Apellido 2:</td>
+							<td><form:input path="apellido2" /></td>
 						</tr>
 						<tr>
-						<tr>
-							<td>id Departamento:</td>
-							<td><form:input path="departamento.iddepartamento" /></td>
+							<td>DNI:</td>
+							<td><form:input path="dni" /></td>
 						</tr>
+						
 						<tr>
-						<tr>
-							<td>id Categoría:</td>
-							<td><form:input path="categorias.idCategorias" /></td>
+							<td>Empleado:</td>
+							
+							<td><form:select path="empleado.idempleados">
+									<c:forEach var="empleadito" items="${listaEmpleaditos}">
+										<option value="${empleadito.idempleados }">${empleadito.codEmpleado }</option>
+									</c:forEach>
+
+								</form:select></td>
 						</tr>
+						
 						<tr>
 							<td colspan="2" align="center"><input type="submit"
 								value="Guardar Registro"></td>

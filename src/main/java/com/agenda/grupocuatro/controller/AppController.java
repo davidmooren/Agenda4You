@@ -54,7 +54,33 @@ public class AppController {
 	
 	@Autowired
 	private PersonasService personasService;
-
+	
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView principal() {
+		ModelAndView model = new ModelAndView("index");
+	
+		/*empleados*/
+		 
+		  List<Empleado> listaEmpleaditos = empleadoService.listaEmpleados();
+		
+		  	model.addObject("listaEmpleaditos", listaEmpleaditos);
+			
+		/*departamento*/
+		 List<Departamento> listaDepartamentitos = departamentoService.listaDepartamentos();
+			
+		 	model.addObject("listaDepartamentitos", listaDepartamentitos);
+			
+		
+		/*categoria*/
+		List<Categorias> listaCategories = categoriaService.listaCaterogias();
+			
+			model.addObject("listaCategories", listaCategories);
+			
+		
+		return model;		
+	}
+	
 	/*@RequestMapping("/")
 	 * 
 	public ModelAndView handleRequest() throws Exception {
@@ -123,7 +149,7 @@ public class AppController {
 	
 	
 	/*Inicio empleados*/
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/listEmpleados", method = RequestMethod.GET)
 	public ModelAndView listaEmpleados(HttpServletRequest request) {		
 		
 		List<Empleado> empleados = empleadoService.listaEmpleados();
@@ -302,6 +328,18 @@ public class AppController {
 	public ModelAndView newPersona() {
 		ModelAndView model = new ModelAndView("personaform");
 		model.addObject("persona", new Personas());
+		
+		//List<Empleado> listaEmpleaditos = empleadoService.listaEmpleadosSinPersona();
+		List<Empleado> listaEmpleaditos = empleadoService.listaEmpleados();
+		if(listaEmpleaditos.isEmpty()){
+			try {
+				throw new Exception("LISTA VACIA LUL");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			model.addObject("listaEmpleaditos",listaEmpleaditos);
+		}
 		return model;		
 	}
 	
@@ -311,6 +349,18 @@ public class AppController {
 		Personas persona = personasService.get(personaId);
 		ModelAndView model = new ModelAndView("personaform");
 		model.addObject("persona", persona);
+		
+		List<Empleado> listaEmpleaditos = empleadoService.listaEmpleados();
+		if(listaEmpleaditos.isEmpty()){
+			try {
+				throw new Exception("LISTA VACIA LUL");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			model.addObject("listaEmpleaditos",listaEmpleaditos);
+		}
+
 		return model;		
 	}
 	

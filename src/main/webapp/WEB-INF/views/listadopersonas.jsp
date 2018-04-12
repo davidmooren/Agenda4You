@@ -87,7 +87,7 @@
 						</a>
 					</div>
 				</c:if>
-
+<!--  
 				<div class="row">
 					<div class="col-md-12 titulo">
 						<span><span class="glyphicon glyphicon-earphone">Telefonos
@@ -111,7 +111,7 @@
 
 				</div>
 
-
+-->
 
 
 			</div>
