@@ -329,8 +329,8 @@ public class AppController {
 		ModelAndView model = new ModelAndView("personaform");
 		model.addObject("persona", new Personas());
 		
-		List<Empleado> listaEmpleaditos = empleadoService.listaEmpleadosSinPersona();
-		
+		//List<Empleado> listaEmpleaditos = empleadoService.listaEmpleadosSinPersona();
+		List<Empleado> listaEmpleaditos = empleadoService.listaEmpleados();
 		if(listaEmpleaditos.isEmpty()){
 			try {
 				throw new Exception("LISTA VACIA LUL");
@@ -349,6 +349,18 @@ public class AppController {
 		Personas persona = personasService.get(personaId);
 		ModelAndView model = new ModelAndView("personaform");
 		model.addObject("persona", persona);
+		
+		List<Empleado> listaEmpleaditos = empleadoService.listaEmpleados();
+		if(listaEmpleaditos.isEmpty()){
+			try {
+				throw new Exception("LISTA VACIA LUL");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			model.addObject("listaEmpleaditos",listaEmpleaditos);
+		}
+
 		return model;		
 	}
 	

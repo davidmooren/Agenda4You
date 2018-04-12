@@ -46,8 +46,8 @@
 						
 						<tr>
 							<td>Empleado:</td>
-							<!-- 	<td><form:input path="persona.idpersonas" /></td> -->
-							<td><form:select path="empleado">
+							
+							<td><form:select path="empleado.idempleados">
 									<c:forEach var="empleadito" items="${listaEmpleaditos}">
 										<option value="${empleadito.idempleados }">${empleadito.codEmpleado }</option>
 									</c:forEach>

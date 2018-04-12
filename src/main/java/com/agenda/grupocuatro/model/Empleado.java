@@ -22,6 +22,8 @@ public class Empleado {
 	private int salario;
 	private Date fechaAlta;
 	
+	
+	
 	@OneToOne
 	@JoinColumn(name="idDepartamento", referencedColumnName="iddepartamento")
 	private Departamento departamento;
