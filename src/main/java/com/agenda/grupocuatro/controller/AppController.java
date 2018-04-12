@@ -166,14 +166,14 @@ public class AppController {
 	
 /*Inicio Telefonos*/
 	
-	@RequestMapping(value = "/newTelefonos", method = RequestMethod.GET)
+	@RequestMapping(value = "/newTelefono", method = RequestMethod.GET)
 	public ModelAndView newTelefonos() {
 		ModelAndView model = new ModelAndView("telefonosform");
 		model.addObject("telefonos", new Telefonos());
 		return model;		
 	}
 	
-	@RequestMapping(value = "/editTelefonos", method = RequestMethod.GET)
+	@RequestMapping(value = "/editTelefono", method = RequestMethod.GET)
 	public ModelAndView editTelefonos(HttpServletRequest request) {
 		int telefonosId = Integer.parseInt(request.getParameter("id"));
 		Telefonos telefonos = telefonosService.get(telefonosId);
@@ -182,7 +182,7 @@ public class AppController {
 		return model;		
 	}
 	
-	@RequestMapping(value = "/deleteTelefonos", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteTelefono", method = RequestMethod.GET)
 	public ModelAndView deleteTelefonos(HttpServletRequest request) {
 		int telefonosId = Integer.parseInt(request.getParameter("id"));
 		telefonosService.baja(telefonosId);
@@ -197,7 +197,7 @@ public class AppController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/saveTelefonos", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveTelefono", method = RequestMethod.POST)
 	public ModelAndView saveTelefonos(@ModelAttribute Telefonos telefonos) {
 		telefonosService.altaOupdate(telefonos);
 		return new ModelAndView("redirect:/listTelefonos");
@@ -350,6 +350,8 @@ public class AppController {
 	public ModelAndView newDireccion() {
 		ModelAndView model = new ModelAndView("direccionform");
 		model.addObject("direccion", new Direcciones());
+		List<Personas> listaPersonitas = personasService.listaPersonas();
+		model.addObject("listaPersonitas", listaPersonitas);
 		return model;		
 	}
 	

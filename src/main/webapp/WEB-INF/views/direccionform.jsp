@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <jsp:include page="../component/imports.jsp" />
 
-<title>Formulario  categoria</title>
+<title>Formulario categoria</title>
 </head>
 <body>
 
@@ -25,7 +25,8 @@
 			<div align="center">
 				<h1>FORMULARIO DE DIRECCIONES</h1>
 				<table>
-					<form:form action="saveDireccion" method="post" modelAttribute="direccion">
+					<form:form action="saveDireccion" method="post"
+						modelAttribute="direccion">
 						<form:hidden path="iddirecciones" />
 						<tr>
 							<td>Dirección:</td>
@@ -35,7 +36,7 @@
 							<td>Código Postal:</td>
 							<td><form:input path="codPostal" /></td>
 						</tr>
-						
+
 						<tr>
 							<td>Localidad:</td>
 							<td><form:input path="localidad" /></td>
@@ -44,11 +45,19 @@
 							<td>Provincia:</td>
 							<td><form:input path="provincia" /></td>
 						</tr>
+
+
 						<tr>
-							<td>id  Persona:</td>
-							<td><form:input path="persona.idpersonas" /></td>
+							<td>id Persona:</td>
+							<!-- 	<td><form:input path="persona.idpersonas" /></td> -->
+							<td><form:select path="persona.idpersonas">
+									<c:forEach var="personita" items="${listaPersonitas}">
+										<option value="${personita.idpersonas }">${personita.nombre }</option>
+									</c:forEach>
+
+								</form:select></td>
 						</tr>
-						
+
 						<tr>
 							<td colspan="2" align="center"><input type="submit"
 								value="Guardar Registro"></td>
