@@ -40,6 +40,11 @@ public class PersonasServiceImpl implements PersonasService {
 	public void baja(int id) {
 		personasDAO.baja(id);
 		
+	}
+
+	@Override
+	public Personas usuarioPorCodEmpleado(String codEmpleado) {
+				return personasDAO.usuarioPorCodEmpleado(codEmpleado);
 	}	
 	
 }

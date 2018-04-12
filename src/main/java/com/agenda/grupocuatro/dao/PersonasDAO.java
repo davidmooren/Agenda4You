@@ -11,4 +11,5 @@ public interface PersonasDAO {
 	public List<Personas> listaPersonas();	
 	public void altaOupdate(Personas persona);
 	public	void baja(int id);
+	public Personas usuarioPorCodEmpleado(String codEmpleado);
 }

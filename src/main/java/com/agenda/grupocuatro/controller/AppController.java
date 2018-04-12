@@ -50,8 +50,7 @@ public class AppController {
 	@Autowired
 	private TelefonosService telefonosService;
 	@Autowired
-	private DireccionesService direccionesService;
-	
+	private DireccionesService direccionesService;	
 	@Autowired
 	private PersonasService personasService;
 	
@@ -81,13 +80,7 @@ public class AppController {
 		return model;		
 	}
 	
-	/*@RequestMapping("/")
-	 * 
-	public ModelAndView handleRequest() throws Exception {
-		ModelAndView model = new ModelAndView("login");
-		return model;
-		
-	}*/
+	
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newUser() {
@@ -466,6 +459,17 @@ public class AppController {
 		
 		ModelAndView model = new ModelAndView("listadodepartamentos");
 		model.addObject("listaDepartamentos", empleados);
+		return model;		
+	}
+	
+	
+	@RequestMapping(value = "/verPersonaPorCodEmpleado", method = RequestMethod.GET)
+	public ModelAndView verPersonaPorCodEmpleado(HttpServletRequest request) {		
+		
+		Personas persona = personasService.usuarioPorCodEmpleado(request.getParameter("idempleado"));
+		
+		ModelAndView model = new ModelAndView("personaendetalle");
+		model.addObject("persona", persona);
 		return model;		
 	}
 }

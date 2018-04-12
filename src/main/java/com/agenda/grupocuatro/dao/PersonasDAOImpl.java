@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,6 +78,22 @@ public class PersonasDAOImpl implements PersonasDAO {
 		personaABorrar.setIdpersonas(id);
 		sessionFactory.getCurrentSession().delete(personaABorrar);
 		
+	}
+
+	@Override
+	public Personas usuarioPorCodEmpleado(String codEmpleado) {
+
+	//	String hql = "from Personas where idpersonas=" +codEmpleado;
+		String hqlguay = " select role from Personas as role INNER JOIN role.empleado as emp WHERE emp.codEmpleado = '"+codEmpleado+"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hqlguay);
+		
+		Personas persona = (Personas) query.uniqueResult();
+		
+		//Logger loger = Logger.getLogger("Tengo persona por codempleado?)
+		if (persona != null) {
+			return persona;
+		}
+		return persona;
 	}
 
 	

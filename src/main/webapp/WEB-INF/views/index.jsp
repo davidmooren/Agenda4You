@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="row">
-			<form action="listEmpleadosBusqueda">
+			<form action="verPersonaPorCodEmpleado">
 				<div class="col-md-offset-2 col-md-4">
 					<h3>Nº Empleado</h3>
 				</div>
