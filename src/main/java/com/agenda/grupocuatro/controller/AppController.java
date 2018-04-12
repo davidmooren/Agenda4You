@@ -472,4 +472,16 @@ public class AppController {
 		model.addObject("persona", persona);
 		return model;		
 	}
+	
+	
+	@RequestMapping(value = "/verPersonaPorDepartamento", method = RequestMethod.GET)
+	public ModelAndView verPersonaPorDepartamento(HttpServletRequest request) {		
+		
+		List<Personas> listaPersonas = personasService.usuarioPorDepartamento(request.getParameter("iddepartamento"));
+		
+		ModelAndView model = new ModelAndView("listadopersonas");
+		model.addObject("listaPersonas", listaPersonas);
+		model.addObject("elDepartamento",request.getParameter("iddepartamento") );
+		return model;		
+	}
 }

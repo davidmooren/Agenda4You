@@ -44,7 +44,7 @@
 		</div>
 
 		<div class="row">
-			<form action="listDepartamentosBusqueda">
+			<form action="verPersonaPorDepartamento">
 				<div class="col-md-offset-2 col-md-4">
 					<h3>Departamento</h3>
 				</div>

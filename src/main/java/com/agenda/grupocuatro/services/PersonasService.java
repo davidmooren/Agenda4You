@@ -10,6 +10,7 @@ public interface PersonasService {
 	public void altaOupdate(Personas persona);
 	public	void baja(int id);
 	public Personas usuarioPorCodEmpleado(String parameter);
+	public List<Personas> usuarioPorDepartamento(String parameter);
 	
 	
 }

@@ -45,6 +45,12 @@ public class PersonasServiceImpl implements PersonasService {
 	@Override
 	public Personas usuarioPorCodEmpleado(String codEmpleado) {
 				return personasDAO.usuarioPorCodEmpleado(codEmpleado);
+	}
+
+	@Override
+	public List<Personas> usuarioPorDepartamento(String idDepartamento) {
+		return personasDAO.usuarioPorDepartamento(idDepartamento);
+		
 	}	
 	
 }
