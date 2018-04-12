@@ -13,4 +13,6 @@ public interface EmpleadoDAO {
 	public void baja(int idEmpleado);
 	
 	public Empleado get(int id);
+
+	public List<Empleado> listaEmpleadosSinPersona();
 }

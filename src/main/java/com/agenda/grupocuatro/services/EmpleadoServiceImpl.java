@@ -33,9 +33,13 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	}
 
 	@Override
-	public Empleado get(int id) {
-		// TODO Auto-generated method stub
+	public Empleado get(int id) {	
 		return empleadoDAO.get(id);
+	}
+
+	@Override
+	public List<Empleado> listaEmpleadosSinPersona() {
+		return empleadoDAO.listaEmpleadosSinPersona();
 	}
 	
 	

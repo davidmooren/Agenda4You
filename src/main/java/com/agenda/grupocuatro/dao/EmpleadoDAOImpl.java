@@ -74,14 +74,29 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
 	public Empleado get(int id) {
 		String hql = "from Empleado where idempleados=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-
-		@SuppressWarnings("unchecked")
 		Empleado empleado = (Empleado) query.uniqueResult();
-
 		if (empleado != null) {
 			return empleado;
 		}
+		return null;
+	}
 
+	@Override
+	public List<Empleado> listaEmpleadosSinPersona() {
+		String sql = "select * from empleados"
+				+ " left join personas"
+				+ " on personas.idEmpleado = empleados.idempleados"
+				+ " where personas.idEmpleado is null;";
+		
+		
+		
+		String hql = "	from Empleado as emp left join Persona  as per    WHERE ug.group_id = :groupId       per.idEmpleado is null";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Empleado> empleados = (List<Empleado>) query.list();
+		if (empleados != null && !empleados.isEmpty()) {
+			return empleados;
+		}
 		return null;
 	}
 
