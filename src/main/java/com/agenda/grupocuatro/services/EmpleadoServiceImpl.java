@@ -41,6 +41,11 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	public List<Empleado> listaEmpleadosSinPersona() {
 		return empleadoDAO.listaEmpleadosSinPersona();
 	}
+
+	@Override
+	public List<Empleado> listaEmpleado(String codigo) {
+		return empleadoDAO.listaEmpleados(codigo);
+	}
 	
 	
 

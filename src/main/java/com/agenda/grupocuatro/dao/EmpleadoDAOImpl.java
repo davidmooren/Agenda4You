@@ -82,6 +82,7 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
 	}
 
 	@Override
+	@Transactional
 	public List<Empleado> listaEmpleadosSinPersona() {
 		String sql = "select * from empleados"
 				+ " left join personas"
@@ -97,6 +98,23 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
 		if (empleados != null && !empleados.isEmpty()) {
 			return empleados;
 		}
+		return null;
+	}
+
+	@Override
+	@Transactional
+	public List<Empleado> listaEmpleados(String codigo) {
+		
+		String hql = "from Empleado WHERE codEmpleado = " + codigo;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Empleado> empleados = (List<Empleado>) query.list();
+		
+		if (empleados != null && !empleados.isEmpty()) {
+			return empleados;
+		}
+
 		return null;
 	}
 

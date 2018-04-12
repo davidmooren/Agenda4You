@@ -67,4 +67,20 @@ public class DepartamentoDAOImpl implements DepartamentoDAO {
 		return null;
 	}
 
+	@Override
+	public List<Departamento> listaDepartamentos(String nombre) {
+		
+		String hql = "from Departamento WHERE nombre = " + nombre;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Departamento> departamentos = (List<Departamento>) query.list();
+		
+		if(departamentos != null && !departamentos.isEmpty()){
+			return departamentos;
+		}
+		
+		return null;
+	}
+
 }
