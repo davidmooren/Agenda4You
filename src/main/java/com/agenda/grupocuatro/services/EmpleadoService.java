@@ -19,4 +19,5 @@ public interface EmpleadoService {
 
 
 	public List<Empleado> listaEmpleadosSinPersona();
+	
 }
