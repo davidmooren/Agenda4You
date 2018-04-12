@@ -35,7 +35,6 @@ public class PersonasDAOImpl implements PersonasDAO {
 		String hql = "from Personas where idpersonas=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
-		@SuppressWarnings("unchecked")
 		Personas persona = (Personas) query.uniqueResult();
 		
 		if (persona != null) {
