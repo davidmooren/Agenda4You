@@ -14,4 +14,6 @@ public interface DepartamentoDAO {
 	
 	public Departamento get(int id);
 	
+	public List<Departamento> listaDepartamentos(String nombre);
+	
 }

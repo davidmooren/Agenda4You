@@ -37,6 +37,11 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 		return departamentoDAO.get(id);
 	}
 
+	@Override
+	public List<Departamento> listaDepartamentos(String nombre) {		
+		return departamentoDAO.listaDepartamentos(nombre);
+	}
+
 	
 	
 }

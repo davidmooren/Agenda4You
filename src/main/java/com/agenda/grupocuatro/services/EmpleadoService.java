@@ -19,4 +19,6 @@ public interface EmpleadoService {
 
 
 	public List<Empleado> listaEmpleadosSinPersona();
+	
+	public List<Empleado> listaEmpleado(String codigo);
 }

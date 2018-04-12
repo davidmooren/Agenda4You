@@ -15,4 +15,6 @@ public interface EmpleadoDAO {
 	public Empleado get(int id);
 
 	public List<Empleado> listaEmpleadosSinPersona();
+	
+	public List<Empleado> listaEmpleados(String codigo);
 }
