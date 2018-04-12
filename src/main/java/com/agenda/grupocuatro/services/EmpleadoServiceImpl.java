@@ -19,12 +19,12 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Override
 	public List<Empleado> listaEmpleados() {
-		return empleadoDAO.listaEmpleados();
+		return empleadoDAO.testListaEmpleados();
 	}
 
 	@Override
-	public void altaOupdate(Empleado empleado) {
-		empleadoDAO.altaOupdate(empleado);
+	public boolean altaOupdate(Empleado empleado) {
+		return empleadoDAO.altaOupdate(empleado);
 	}
 
 	@Override

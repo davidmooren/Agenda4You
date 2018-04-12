@@ -10,7 +10,7 @@ public interface EmpleadoService {
 	public List<Empleado> listaEmpleados();
 	
 	
-	public void altaOupdate(Empleado empleado);
+	public boolean altaOupdate(Empleado empleado);
 	
 	
 	public void baja (int idEmpleado);
