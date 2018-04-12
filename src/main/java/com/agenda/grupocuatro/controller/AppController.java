@@ -445,4 +445,27 @@ public class AppController {
 	
 	
 	/*Fin Direcciones*/
+	
+	
+	/*Inicio listados de las búsquedas*/
+	
+	@RequestMapping(value = "/listEmpleadosBusqueda", method = RequestMethod.GET)
+	public ModelAndView listaEmpleadosBusqueda(HttpServletRequest request) {		
+		
+		List<Empleado> empleados = empleadoService.listaEmpleados(request.getParameter("idempleado"));
+		
+		ModelAndView model = new ModelAndView("listado");
+		model.addObject("listaEmpleados", empleados);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/listDepartamentosBusqueda", method = RequestMethod.GET)
+	public ModelAndView listaDepartamentosBusqueda(HttpServletRequest request) {		
+		
+		List<Departamento> empleados = departamentoService.listaDepartamentos(request.getParameter("iddepartamento"));
+		
+		ModelAndView model = new ModelAndView("listadodepartamentos");
+		model.addObject("listaDepartamentos", empleados);
+		return model;		
+	}
 }

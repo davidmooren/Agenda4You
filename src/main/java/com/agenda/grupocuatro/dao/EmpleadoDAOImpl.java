@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.agenda.grupocuatro.model.Empleado;
+import com.agenda.grupocuatro.model.Personas;
 
 @Repository
 public class EmpleadoDAOImpl implements EmpleadoDAO {
@@ -105,7 +106,8 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
 	@Transactional
 	public List<Empleado> listaEmpleados(String codigo) {
 		
-		String hql = "from Empleado WHERE codEmpleado = " + codigo;
+		String hql = "select emp From Personas per inner join per.empleado emp where emp.codEmpleado = '" + codigo +"'";
+		//From Persona per inner join per.empleado
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")

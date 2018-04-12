@@ -71,7 +71,7 @@ public class DepartamentoDAOImpl implements DepartamentoDAO {
 	@Transactional
 	public List<Departamento> listaDepartamentos(String nombre) {
 		
-		String hql = "from Departamento WHERE nombre = " + nombre;
+		String hql = "from Departamento WHERE iddepartamento = " + nombre;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")

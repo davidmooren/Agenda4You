@@ -43,7 +43,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	}
 
 	@Override
-	public List<Empleado> listaEmpleado(String codigo) {
+	public List<Empleado> listaEmpleados(String codigo) {
 		return empleadoDAO.listaEmpleados(codigo);
 	}
 	

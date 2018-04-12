@@ -27,11 +27,11 @@
 			<div class="col-md-offset-2 col-md-4">
 				<h3>Nº Empleado</h3>
 			</div>
-			<form>
+			<form action="listEmpleadosBusqueda">
 				<div class="col-md-4">
 					<select name="idempleado">
 						<c:forEach var="empleadito" items="${listaEmpleaditos}">
-							<option value="${empleadito.idempleados }">${empleadito.codEmpleado }</option>
+							<option value="${empleadito.codEmpleado }">${empleadito.codEmpleado }</option>
 						</c:forEach>
 
 					</select>
@@ -46,7 +46,7 @@
 			<div class="col-md-offset-2 col-md-4">
 				<h3>Departamento</h3>
 			</div>
-			<form>
+			<form action="listDepartamentosBusqueda">
 				<div class="col-md-4">
 					<select name="iddepartamento">
 						<c:forEach var="departamentito" items="${listaDepartamentitos}">
