@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Departamento;
+import com.agenda.grupocuatro.model.Direcciones;
 import com.agenda.grupocuatro.model.Empleado;
 import com.agenda.grupocuatro.model.Personas;
 import com.agenda.grupocuatro.model.Telefonos;
@@ -28,6 +29,7 @@ import com.agenda.grupocuatro.services.EmpleadoService;
 import com.agenda.grupocuatro.services.PersonasService;
 import com.agenda.grupocuatro.services.TelefonosService;
 import com.agenda.grupocuatro.services.UsuarioAdminService;
+import com.agenda.grupocuatro.services.DireccionesService;
 
 /**
  * Handles requests for the application home page.
@@ -49,6 +51,8 @@ public class AppController {
 	private PersonasService personasService;
 	@Autowired
 	private TelefonosService telefonosService;
+	@Autowired
+	private DireccionesService direccionesService;
 
 	/*@RequestMapping("/")
 	 * 
@@ -291,7 +295,7 @@ public class AppController {
 	
 	
 	/*Inicio Personas*/
-/*Inicio Categoria*/
+
 	
 	@RequestMapping(value = "/newPersona", method = RequestMethod.GET)
 	public ModelAndView newPersona() {
@@ -329,5 +333,47 @@ public class AppController {
 		personasService.altaOupdate(persona);
 		return new ModelAndView("redirect:/listPersonas");
 	}
-	/*Fin Pesonas*/
+	/*Fin Personas*/
+	
+	/*Inicio Direcciones*/
+	@RequestMapping(value = "/newDireccion", method = RequestMethod.GET)
+	public ModelAndView newDireccion() {
+		ModelAndView model = new ModelAndView("direccionform");
+		model.addObject("direccion", new Direcciones());
+		return model;		
+	}
+	
+	@RequestMapping(value = "/editDireccion", method = RequestMethod.GET)
+	public ModelAndView editDireccion(HttpServletRequest request) {
+		int direccionId = Integer.parseInt(request.getParameter("id"));
+		Direcciones direccion = direccionesService.get(direccionId);
+		ModelAndView model = new ModelAndView("direccionform");
+		model.addObject("direccion", direccion);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/deleteDireccion", method = RequestMethod.GET)
+	public ModelAndView deleteDireccion(HttpServletRequest request) {
+		int direccionId = Integer.parseInt(request.getParameter("id"));
+		direccionesService.baja(direccionId);
+		return new ModelAndView("redirect:/listDirecciones");		
+	}
+	
+	@RequestMapping(value="/listDirecciones", method=RequestMethod.GET)
+	public ModelAndView listarDireccion(){
+		List<Direcciones> listaDirecciones = direccionesService.listaDirecciones();
+		ModelAndView model = new ModelAndView("listadodirecciones");
+		model.addObject("listaDirecciones", listaDirecciones);
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveDireccion", method = RequestMethod.POST)
+	public ModelAndView saveDirecciones(@ModelAttribute Direcciones direccion) {
+		direccionesService.altaOupdate(direccion);
+		return new ModelAndView("redirect:/listDirecciones");
+	}
+	
+	
+	
+	/*Fin Direcciones*/
 }
