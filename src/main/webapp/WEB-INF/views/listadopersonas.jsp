@@ -50,7 +50,7 @@
 					</c:when>
 					<c:otherwise>
 						<div class="col-md-offset-1 col-md-2">
-							<p>${persona.apellido1 }</p>
+							<p>${persona.nombre }</p>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -58,7 +58,7 @@
 				<c:choose>
 					<c:when test="${empty admin}">
 						<div class="col-md-3">
-							<p>${persona.nombre }</p>
+							<p>${persona.apellido1 }</p>
 						</div>
 					</c:when>
 					<c:otherwise>

@@ -46,13 +46,14 @@ public class AppController {
 	@Autowired
 	private CategoriasService categoriaService;
 	@Autowired
-	private DepartamentoService departamentoService;
-	@Autowired
-	private PersonasService personasService;
+	private DepartamentoService departamentoService;	
 	@Autowired
 	private TelefonosService telefonosService;
 	@Autowired
 	private DireccionesService direccionesService;
+	
+	@Autowired
+	private PersonasService personasService;
 
 	/*@RequestMapping("/")
 	 * 
@@ -190,9 +191,9 @@ public class AppController {
 	
 	@RequestMapping(value="/listTelefonos", method=RequestMethod.GET)
 	public ModelAndView listarTelefonos(){
-		List<Telefonos> listaCategorias = telefonosService.listaTelefonos();
+		List<Telefonos> listaTelefonos = telefonosService.listaTelefonos();
 		ModelAndView model = new ModelAndView("listadotelefonos");
-		model.addObject("listaTelefonos", listarTelefonos());
+		model.addObject("listaTelefonos",listaTelefonos);
 		return model;
 	}
 	

@@ -1,6 +1,7 @@
 package com.agenda.grupocuatro.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -20,7 +21,7 @@ public class Telefonos {
 	
 	private String telefono;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="idpersonas", referencedColumnName="idpersonas")
 	private Personas persona;
 

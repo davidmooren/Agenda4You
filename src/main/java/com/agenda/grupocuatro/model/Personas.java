@@ -5,6 +5,7 @@ import java.util.Collection;
 
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -32,10 +33,10 @@ public class Personas {
 	@JoinColumn(name="idEmpleado", referencedColumnName="idempleados")
 	private Empleado empleado;
 	
-	@OneToMany(mappedBy = "persona")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
     private Collection<Telefonos> telefonosCollection;
 	
-	@OneToMany(mappedBy = "persona")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
     private Collection<Direcciones> direccionesCollection;
 	
 	

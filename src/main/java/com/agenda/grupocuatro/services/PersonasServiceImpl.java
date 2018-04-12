@@ -3,11 +3,14 @@ package com.agenda.grupocuatro.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.agenda.grupocuatro.dao.PersonasDAO;
 import com.agenda.grupocuatro.model.Personas;
 
+@Service
+@Transactional
 public class PersonasServiceImpl implements PersonasService {
 
 	@Autowired
