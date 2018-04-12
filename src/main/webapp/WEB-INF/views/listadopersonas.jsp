@@ -63,11 +63,17 @@
 					</c:when>
 					<c:otherwise>
 						<div class="col-md-2">
-						<p>${persona.apellido1 }</p>
+							<p>${persona.apellido1 }</p>
 						</div>
 					</c:otherwise>
 				</c:choose>
-
+				<div class="row">
+					<c:forEach var="telefono" items="${persona.telefonosCollection }">
+						<div class="col-md-12">
+							<span>${telefono.telefono }</span>
+						</div>
+					</c:forEach>
+				</div>
 				<div class="col-md-2">
 					<button>Ver Telefonos</button>
 				</div>
@@ -75,15 +81,15 @@
 
 				<c:if test="${not empty admin}">
 					<div class="col-md-2">
-					<a href="editPersona?id=${persona.idpersona }">
-						<button>Modificar</button>
+						<a href="editPersona?id=${persona.idpersona }">
+							<button>Modificar</button>
 						</a>
 					</div>
 				</c:if>
 				<c:if test="${not empty admin}">
 					<div class="col-md-2">
 						<a href="deletePersona?id=${persona.idpersona }">
-						<button>Borrar</button>
+							<button>Borrar</button>
 						</a>
 					</div>
 				</c:if>

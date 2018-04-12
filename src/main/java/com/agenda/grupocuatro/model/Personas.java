@@ -33,10 +33,10 @@ public class Personas {
 	@JoinColumn(name="idEmpleado", referencedColumnName="idempleados")
 	private Empleado empleado;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "persona")
     private Collection<Telefonos> telefonosCollection;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "persona")
     private Collection<Direcciones> direccionesCollection;
 	
 	
