@@ -29,8 +29,8 @@ public class Personas {
 	private String dni;
 	private Date fechaNacimiento;
 	
-	@OneToOne
-	@JoinColumn(name="idEmpleado", referencedColumnName="idempleados")
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="idEmpleado")
 	private Empleado empleado;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "persona")

@@ -68,24 +68,8 @@
 					</c:otherwise>
 				</c:choose>
 				<div class="col-md-2">
-					<button>Ver Telefonos</button>
+					<button>Ver Detalle</button>
 				</div>
-				
-				<div class="row">
-				<div class="col-md-12 titulo">
-							<span><span
-									class="glyphicon glyphicon-earphone">Telefonos del usuario:</span>
-						</div>
-					<c:forEach var="telefono" items="${persona.telefonosCollection }">
-						<div class="col-md-12 titulo">
-							<span>${telefono.telefono }</span>
-						</div>
-					</c:forEach>
-					
-					
-				</div>
-				
-
 
 				<c:if test="${not empty admin}">
 					<div class="col-md-2">
@@ -101,6 +85,33 @@
 						</a>
 					</div>
 				</c:if>
+
+				<div class="row">
+					<div class="col-md-12 titulo">
+						<span><span class="glyphicon glyphicon-earphone">Telefonos
+								del usuario:</span>
+					</div>
+					<c:forEach var="telefono" items="${persona.telefonosCollection }">
+						<div class="col-md-12 titulo">
+							<span>${telefono.telefono }</span>
+						</div>
+					</c:forEach>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 titulo">
+						<span><span class="glyphicon glyphicon-sunglasses">Empleado:</span>
+					</div>
+
+					<div class="col-md-12 titulo">
+						<span>${persona.empleado.codEmpleado }</span>
+					</div>
+
+				</div>
+
+
+
+
 			</div>
 
 		</c:forEach>
