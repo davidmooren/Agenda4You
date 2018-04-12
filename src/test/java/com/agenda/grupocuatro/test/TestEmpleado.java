@@ -17,6 +17,7 @@ public class TestEmpleado {
 		logger.log(Level.INFO, "dentro de test");
 		
 		EmpleadoService empleadoService = new EmpleadoServiceImpl();
+		logger.log(Level.INFO, "servicio inciado");
 		
 		Empleado emp = empleadoService.get(id);
 		logger.log(Level.INFO, "get conseguido");
