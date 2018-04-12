@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.agenda.grupocuatro.dao.CategoriasDAO;
-import com.agenda.grupocuatro.dao.ContactDAO;
+
 import com.agenda.grupocuatro.model.Categorias;
-import com.agenda.grupocuatro.model.Contact;
+
 
 @Service
 @Transactional

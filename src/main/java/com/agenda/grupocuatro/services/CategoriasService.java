@@ -3,7 +3,7 @@ package com.agenda.grupocuatro.services;
 import java.util.List;
 
 import com.agenda.grupocuatro.model.Categorias;
-import com.agenda.grupocuatro.model.Contact;
+
 
 
 public interface CategoriasService {
