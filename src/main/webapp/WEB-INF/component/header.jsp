@@ -28,7 +28,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="listCategorias">Categorias</a></li>
 								<li><a href="listDepartamentos">Departamentos</a></li>
-								<li><a href="#"></a></li>
+								<li><a href="listTelefonos">Telefonos</a></li>
 							</ul>
 						</li>
 					</c:if>
