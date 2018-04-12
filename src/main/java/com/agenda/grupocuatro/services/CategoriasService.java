@@ -12,5 +12,7 @@ public interface CategoriasService {
 	public	void baja(int id);
 	public List<Categorias> listaCaterogias();	
 	public Categorias get(int id);
+	
+	public List<Categorias> listaCategorias(String nombre);
 
 }

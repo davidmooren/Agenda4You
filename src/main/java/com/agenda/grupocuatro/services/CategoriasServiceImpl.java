@@ -41,6 +41,11 @@ public class CategoriasServiceImpl implements CategoriasService {
 		return  categoriaDAO.get(id);
 	}
 
+	@Override
+	public List<Categorias> listaCategorias(String nombre) {
+		return categoriaDAO.listaCategorias(nombre);
+	}
+
 	
 	
 

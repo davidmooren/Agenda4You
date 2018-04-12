@@ -13,5 +13,7 @@ public interface CategoriasDAO {
 	public List<Categorias> listaCaterogias();
 
 	public Categorias get(int id);
+	
+	public List<Categorias> listaCategorias(String nombre);
 
 }
