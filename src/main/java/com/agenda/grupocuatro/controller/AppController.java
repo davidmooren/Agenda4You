@@ -270,7 +270,7 @@ public class AppController {
 		return new ModelAndView("redirect:/listPersonas");		
 	}
 	
-	@RequestMapping(value="/listPersona", method=RequestMethod.GET)
+	@RequestMapping(value="/listPersonas", method=RequestMethod.GET)
 	public ModelAndView listarPersona(){
 		List<Personas> listaPersonas = personasService.listaPersonas();
 		ModelAndView model = new ModelAndView("listadopersonas");
