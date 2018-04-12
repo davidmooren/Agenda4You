@@ -27,16 +27,16 @@
 		
 		
 		<div class="row">
-			<div class="col-md-offset-2 col-md-1">
+			<div class=" col-md-2">
 				<h3>Id Persona</h3>
 			</div>
 			<div class="col-md-2">
 				<h3>Dirección</h3>
 			</div>
 			<div class="col-md-1">
-				<h3>Código Postal</h3>
+				<h3>CP</h3>
 			</div>
-			<div class="col-md-1">
+			<div class="col-md-2">
 				<h3>Localidad</h3>
 			</div>
 			<div class="col-md-1">
@@ -49,8 +49,8 @@
 
 			<div class="row">
 
-				<div class="col-md-offset-2 col-md-1">
-					<p>${direccion.persona.nombre }${direccion.persona.apellido1 }</p>
+				<div class="col-md-2">
+					<p>${direccion.persona.nombre } ${direccion.persona.apellido1 }</p>
 				</div>
 
 				<div class="col-md-2">
@@ -59,7 +59,7 @@
 				<div class="col-md-1">
 					<p>${direccion.codPostal }</p>
 				</div>
-				<div class="col-md-1">
+				<div class="col-md-2">
 					<p>${direccion.localidad }</p>
 				</div>
 				<div class="col-md-1">
@@ -67,13 +67,13 @@
 				</div>
 
 				<div class="col-md-2">
-					<a href="editDireccion?id=${direccion.idDirecciones }">
+					<a href="editDireccion?id=${direccion.iddirecciones }">
 						<button>Modificar</button>
 					</a>
 				</div>
 
 				<div class="col-md-2">
-					<a href="deleteDireccion?id=${direccion.idDirecciones }">
+					<a href="deleteDireccion?id=${direccion.iddirecciones }">
 						<button>Eliminar</button>
 					</a>
 				</div>
