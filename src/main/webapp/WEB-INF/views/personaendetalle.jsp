@@ -53,7 +53,7 @@
 		</div>
 
 
-		<div class="row">
+		<div class="row fin_formulario" >
 			<div class="col-md-12 titulo">
 				<h4>Direcciones del usuario:</h4>
 			</div>
