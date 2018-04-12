@@ -12,4 +12,7 @@
  
 <link href='<spring:url value="/resources/css/custom.css"/>' rel="stylesheet" />
 
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lato');
+</style>
  

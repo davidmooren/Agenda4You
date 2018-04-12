@@ -147,6 +147,13 @@ public class AppController {
 		return new ModelAndView("redirect:/");				
 	}
 	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public ModelAndView logoutAdmin(HttpServletRequest request) {				
+		HttpSession session = request.getSession();		
+		session.setAttribute("admin", null );					
+		return new ModelAndView("redirect:/");				
+	}
+	
 	
 	/*Inicio empleados*/
 	@RequestMapping(value = "/listEmpleados", method = RequestMethod.GET)

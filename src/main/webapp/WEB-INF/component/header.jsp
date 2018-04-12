@@ -12,7 +12,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./">AGENDA</a>
+				<a class="navbar-brand" href="./">Agenda4You</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse"
 				aria-expanded="false" style="height: 1px;">
@@ -52,10 +52,10 @@
 									class="glyphicon glyphicon-user"></span> Acceso</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="DesconectarUsuario"><span
+							<li><a href="logout"><span
 									class="glyphicon glyphicon-user"></span> Desconectar</a></li>
 
-							<li class="usuario_logeado_header">${cliente_logeado.nombre}</li>
+							<li class="usuario_logeado_header">${admin.usuario}</li>
 						</c:otherwise>
 					</c:choose>
 					

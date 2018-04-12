@@ -1,3 +1,7 @@
+*{
+	font-family: 'Lato', sans-serif;
+}
+
 body {
 	background-image: url("../src/background.jpg");
 	background-repeat: no-repeat;

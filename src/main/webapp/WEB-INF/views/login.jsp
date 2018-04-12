@@ -18,21 +18,17 @@
 			<div class="main">
 
 				<form action="logear" method="POST">
-
 					<div class="form-group">
 						<label for="usuario">Indique su nombre de usuario:</label> <input
 							type="text" class="form-control" name="usuario" id="usuario">
 					</div>
 					<div class="form-group">
-						<a class="pull-right" href="#">Olvidaste la contraseña?</a> <label
-							for="password">Contraseña</label> <input type="password"
+						<label for="password">Contraseña</label> <input type="password"
 							class="form-control" name="password" id="password">
 					</div>
-					<div class="checkbox pull-right">
-						<label> <input type="checkbox"> Recordarme
-						</label>
+					<div class="col-md-12 centrar fin_formulario">
+						<button type="submit" class="btn btn btn-primary">Acceder</button>
 					</div>
-					<button type="submit" class="btn btn btn-primary">Acceder</button>
 				</form>
 
 			</div>
@@ -42,6 +38,6 @@
 
 
 	<jsp:include page="../component/footer.jsp" />
-		
+
 </body>
 </html>
