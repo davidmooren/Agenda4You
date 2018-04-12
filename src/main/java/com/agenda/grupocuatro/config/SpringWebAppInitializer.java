@@ -23,8 +23,6 @@ public class SpringWebAppInitializer implements WebApplicationInitializer {
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
         
-        Logger log = Logger.getLogger(SpringWebAppInitializer.class.getName());
-        log.log(Level.WARNING, " --- putos amos --- ");
 	}
 
 }
