@@ -43,7 +43,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Departamento;
+import com.agenda.grupocuatro.model.Direcciones;
 import com.agenda.grupocuatro.model.Empleado;
+import com.agenda.grupocuatro.model.Personas;
+import com.agenda.grupocuatro.model.Telefonos;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
 
 @Configuration
@@ -95,6 +98,9 @@ public class ApplicationContextConfig implements WebMvcConfigurer{
     	sessionBuilder.addAnnotatedClasses(Departamento.class);
     	sessionBuilder.addAnnotatedClasses(Categorias.class);
     	sessionBuilder.addAnnotatedClasses(Empleado.class);
+    	sessionBuilder.addAnnotatedClasses(Personas.class);
+    	sessionBuilder.addAnnotatedClasses(Direcciones.class);
+    	sessionBuilder.addAnnotatedClasses(Telefonos.class);
     	return sessionBuilder.buildSessionFactory();
     }
     
