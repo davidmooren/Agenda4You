@@ -1,24 +1,31 @@
 package com.agenda.grupocuatro.test;
 
-import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.agenda.grupocuatro.model.Empleado;
+import com.agenda.grupocuatro.services.EmpleadoService;
+import com.agenda.grupocuatro.services.EmpleadoServiceImpl;
 
 public class TestEmpleado {
 
-	public static boolean salarioCorrecto(List<Empleado> lista){
-				
-		boolean correcto = true;
-		
-		for(int i=0; i<lista.size() && correcto; i++){
-			if(lista.get(i).getSalario() < 0){
-				correcto = false;
-			}
-		}
-		
-		return correcto;
-		
-	}
+	public static String codigoCorrecto(int id)
+	{
 	
+		Logger logger = Logger.getLogger("test logger");
+		
+		logger.log(Level.INFO, "dentro de test");
+		
+		EmpleadoService empleadoService = new EmpleadoServiceImpl();
+		
+		Empleado emp = empleadoService.get(id);
+		logger.log(Level.INFO, "get conseguido");
+		
+		String valor = empleadoService.get(id).getCodEmpleado();
+		logger.log(Level.INFO, "todo hecho");
+		
+		return valor;
+
+	}
 
 }

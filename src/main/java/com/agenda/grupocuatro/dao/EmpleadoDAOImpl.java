@@ -77,11 +77,10 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
 
 		@SuppressWarnings("unchecked")
 		Empleado empleado = (Empleado) query.uniqueResult();
-
 		if (empleado != null) {
 			return empleado;
 		}
-
+		
 		return null;
 	}
 
