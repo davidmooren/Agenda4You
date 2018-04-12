@@ -46,7 +46,7 @@
 						</tr>
 						<tr>
 							<td>id  Persona:</td>
-							<td><form:input path="personas.idPersonas" /></td>
+							<td><form:input path="persona.idpersonas" /></td>
 						</tr>
 						
 						<tr>

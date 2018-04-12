@@ -62,7 +62,7 @@ public class DireccionesDAOImpl implements DireccionesDAO {
 		Query query= sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings ("unchecked")
-		Direcciones direcciones= (Direcciones)query.list();
+		Direcciones direcciones= (Direcciones)query.uniqueResult();
 		if (direcciones !=null) {
 			return direcciones;
 			}
