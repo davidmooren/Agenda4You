@@ -28,7 +28,7 @@
 		
 		<div class="row">
 			<div class=" col-md-2">
-				<h3>Id Persona</h3>
+				<h3>Nombre</h3>
 			</div>
 			<div class="col-md-2">
 				<h3>Dirección</h3>
