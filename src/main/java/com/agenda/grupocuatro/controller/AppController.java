@@ -18,11 +18,15 @@ import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Departamento;
 import com.agenda.grupocuatro.model.Empleado;
+import com.agenda.grupocuatro.model.Personas;
+import com.agenda.grupocuatro.model.Telefonos;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
 import com.agenda.grupocuatro.services.CategoriasService;
 import com.agenda.grupocuatro.services.ContactService;
 import com.agenda.grupocuatro.services.DepartamentoService;
 import com.agenda.grupocuatro.services.EmpleadoService;
+import com.agenda.grupocuatro.services.PersonasService;
+import com.agenda.grupocuatro.services.TelefonosService;
 import com.agenda.grupocuatro.services.UsuarioAdminService;
 
 /**
@@ -41,8 +45,13 @@ public class AppController {
 	private CategoriasService categoriaService;
 	@Autowired
 	private DepartamentoService departamentoService;
+	@Autowired
+	private PersonasService personasService;
+	@Autowired
+	private TelefonosService telefonosService;
 
 	/*@RequestMapping("/")
+	 * 
 	public ModelAndView handleRequest() throws Exception {
 		ModelAndView model = new ModelAndView("login");
 		return model;
@@ -147,12 +156,49 @@ public class AppController {
 		empleadoService.altaOupdate(empleado);
 		return new ModelAndView("redirect:/");
 	}
-	
-	
-	
-	
+		
 	/*Fin empleados*/
 	
+/*Inicio Telefonos*/
+	
+	@RequestMapping(value = "/newTelefonos", method = RequestMethod.GET)
+	public ModelAndView newTelefonos() {
+		ModelAndView model = new ModelAndView("telefonosform");
+		model.addObject("telefonos", new Telefonos());
+		return model;		
+	}
+	
+	@RequestMapping(value = "/editTelefonos", method = RequestMethod.GET)
+	public ModelAndView editTelefonos(HttpServletRequest request) {
+		int telefonosId = Integer.parseInt(request.getParameter("id"));
+		Telefonos telefonos = telefonosService.get(telefonosId);
+		ModelAndView model = new ModelAndView("telefonosform");
+		model.addObject("telefonos", telefonos);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/deleteTelefonos", method = RequestMethod.GET)
+	public ModelAndView deleteTelefonos(HttpServletRequest request) {
+		int telefonosId = Integer.parseInt(request.getParameter("id"));
+		telefonosService.baja(telefonosId);
+		return new ModelAndView("redirect:/listTelefonos");		
+	}
+	
+	@RequestMapping(value="/listTelefonos", method=RequestMethod.GET)
+	public ModelAndView listarTelefonos(){
+		List<Telefonos> listaCategorias = telefonosService.listaTelefonos();
+		ModelAndView model = new ModelAndView("listadotelefonos");
+		model.addObject("listaTelefonos", listarTelefonos());
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveTelefonos", method = RequestMethod.POST)
+	public ModelAndView saveTelefonos(@ModelAttribute Telefonos telefonos) {
+		telefonosService.altaOupdate(telefonos);
+		return new ModelAndView("redirect:/listTelefonos");
+	}
+	
+	/*Fin Telefonos*/
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -163,7 +209,7 @@ public class AppController {
 		return model;		
 	}
 	
-	
+	/*Inicio Categoria*/
 	
 	@RequestMapping(value = "/newCategoria", method = RequestMethod.GET)
 	public ModelAndView newCategoria() {
@@ -201,7 +247,9 @@ public class AppController {
 		categoriaService.altaOupdate(categoria);
 		return new ModelAndView("redirect:/listCategorias");
 	}
+	/*Fin categoria*/
 	
+
 	
 	
 	@RequestMapping(value ="/newDepartamento", method=RequestMethod.GET)
@@ -241,4 +289,45 @@ public class AppController {
 		return new ModelAndView("redirect:/listDepartamentos");
 	}
 	
+	
+	/*Inicio Personas*/
+/*Inicio Categoria*/
+	
+	@RequestMapping(value = "/newPersona", method = RequestMethod.GET)
+	public ModelAndView newPersona() {
+		ModelAndView model = new ModelAndView("personaform");
+		model.addObject("persona", new Personas());
+		return model;		
+	}
+	
+	@RequestMapping(value = "/editPersona", method = RequestMethod.GET)
+	public ModelAndView editPersona(HttpServletRequest request) {
+		int personaId = Integer.parseInt(request.getParameter("id"));
+		Personas persona = personasService.get(personaId);
+		ModelAndView model = new ModelAndView("personaform");
+		model.addObject("persona", persona);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/deletePersona", method = RequestMethod.GET)
+	public ModelAndView deletePersona(HttpServletRequest request) {
+		int personaId = Integer.parseInt(request.getParameter("id"));
+		personasService.baja(personaId);
+		return new ModelAndView("redirect:/listPersonas");		
+	}
+	
+	@RequestMapping(value="/listPersona", method=RequestMethod.GET)
+	public ModelAndView listarPersona(){
+		List<Personas> listaPersonas = personasService.listaPersonas();
+		ModelAndView model = new ModelAndView("listadopersonas");
+		model.addObject("listaPersonas", listaPersonas);
+		return model;
+	}
+	
+	@RequestMapping(value = "/savePersona", method = RequestMethod.POST)
+	public ModelAndView savePersona(@ModelAttribute Personas persona) {
+		personasService.altaOupdate(persona);
+		return new ModelAndView("redirect:/listPersonas");
+	}
+	/*Fin Pesonas*/
 }
