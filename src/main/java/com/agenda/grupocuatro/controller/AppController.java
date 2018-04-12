@@ -328,6 +328,18 @@ public class AppController {
 	public ModelAndView newPersona() {
 		ModelAndView model = new ModelAndView("personaform");
 		model.addObject("persona", new Personas());
+		
+		List<Empleado> listaEmpleaditos = empleadoService.listaEmpleadosSinPersona();
+		
+		if(listaEmpleaditos.isEmpty()){
+			try {
+				throw new Exception("LISTA VACIA LUL");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			model.addObject("listaEmpleaditos",listaEmpleaditos);
+		}
 		return model;		
 	}
 	
