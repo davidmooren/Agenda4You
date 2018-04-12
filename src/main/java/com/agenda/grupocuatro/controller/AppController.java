@@ -19,12 +19,14 @@ import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Departamento;
 import com.agenda.grupocuatro.model.Empleado;
 import com.agenda.grupocuatro.model.Personas;
+import com.agenda.grupocuatro.model.Telefonos;
 import com.agenda.grupocuatro.model.UsuarioAdmin;
 import com.agenda.grupocuatro.services.CategoriasService;
 import com.agenda.grupocuatro.services.ContactService;
 import com.agenda.grupocuatro.services.DepartamentoService;
 import com.agenda.grupocuatro.services.EmpleadoService;
 import com.agenda.grupocuatro.services.PersonasService;
+import com.agenda.grupocuatro.services.TelefonosService;
 import com.agenda.grupocuatro.services.UsuarioAdminService;
 
 /**
@@ -45,7 +47,11 @@ public class AppController {
 	private DepartamentoService departamentoService;
 	@Autowired
 	private PersonasService personasService;
+	@Autowired
+	private TelefonosService telefonosService;
+
 	/*@RequestMapping("/")
+	 * 
 	public ModelAndView handleRequest() throws Exception {
 		ModelAndView model = new ModelAndView("login");
 		return model;
@@ -153,6 +159,46 @@ public class AppController {
 		
 	/*Fin empleados*/
 	
+/*Inicio Telefonos*/
+	
+	@RequestMapping(value = "/newTelefonos", method = RequestMethod.GET)
+	public ModelAndView newTelefonos() {
+		ModelAndView model = new ModelAndView("telefonosform");
+		model.addObject("telefonos", new Telefonos());
+		return model;		
+	}
+	
+	@RequestMapping(value = "/editTelefonos", method = RequestMethod.GET)
+	public ModelAndView editTelefonos(HttpServletRequest request) {
+		int telefonosId = Integer.parseInt(request.getParameter("id"));
+		Telefonos telefonos = telefonosService.get(telefonosId);
+		ModelAndView model = new ModelAndView("telefonosform");
+		model.addObject("telefonos", telefonos);
+		return model;		
+	}
+	
+	@RequestMapping(value = "/deleteTelefonos", method = RequestMethod.GET)
+	public ModelAndView deleteTelefonos(HttpServletRequest request) {
+		int telefonosId = Integer.parseInt(request.getParameter("id"));
+		telefonosService.baja(telefonosId);
+		return new ModelAndView("redirect:/listTelefonos");		
+	}
+	
+	@RequestMapping(value="/listTelefonos", method=RequestMethod.GET)
+	public ModelAndView listarTelefonos(){
+		List<Telefonos> listaCategorias = telefonosService.listaTelefonos();
+		ModelAndView model = new ModelAndView("listadotelefonos");
+		model.addObject("listaTelefonos", listarTelefonos());
+		return model;
+	}
+	
+	@RequestMapping(value = "/saveTelefonos", method = RequestMethod.POST)
+	public ModelAndView saveTelefonos(@ModelAttribute Telefonos telefonos) {
+		telefonosService.altaOupdate(telefonos);
+		return new ModelAndView("redirect:/listTelefonos");
+	}
+	
+	/*Fin Telefonos*/
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
