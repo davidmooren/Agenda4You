@@ -25,7 +25,7 @@
 			<div class="col-md-12 titulo">
 				<h4>Telefonos del usuario:</h4>
 			</div>
-			<c:forEach var="telefono" items="  ${persona.telefonosCollection }">
+			<c:forEach var="telefono" items=">  ${persona.telefonosCollection }">
 				<div class="col-md-12 centrar">
 					<p class="glyphicon glyphicon-earphone">${telefono.telefono }</p>
 				</div>
