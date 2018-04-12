@@ -78,9 +78,6 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
 		if (empleado != null) {
 			return empleado;
 		}
-<<<<<<< HEAD
-		
-=======
 		return null;
 	}
 
@@ -100,7 +97,6 @@ public class EmpleadoDAOImpl implements EmpleadoDAO {
 		if (empleados != null && !empleados.isEmpty()) {
 			return empleados;
 		}
->>>>>>> 0eb30f475e0eef4a5b6e94ed073ff1f4243c80d6
 		return null;
 	}
 
