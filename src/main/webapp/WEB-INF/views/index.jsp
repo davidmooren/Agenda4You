@@ -66,7 +66,7 @@
 
 
 		<div class="row">
-			<form>
+			<form action="verPersonaPorCategoria">
 				<div class="col-md-offset-2 col-md-4">
 					<h3>Categoría</h3>
 				</div>

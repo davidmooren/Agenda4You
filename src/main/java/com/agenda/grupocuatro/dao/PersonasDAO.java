@@ -13,4 +13,5 @@ public interface PersonasDAO {
 	public	void baja(int id);
 	public Personas usuarioPorCodEmpleado(String codEmpleado);
 	public List<Personas> usuarioPorDepartamento(String idDepartamento);
+	public List<Personas> usuarioPorCategoria(String idcategoria);
 }

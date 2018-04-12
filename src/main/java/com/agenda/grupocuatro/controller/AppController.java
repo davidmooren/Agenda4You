@@ -484,4 +484,15 @@ public class AppController {
 		model.addObject("elDepartamento",request.getParameter("iddepartamento") );
 		return model;		
 	}
+	
+	@RequestMapping(value = "/verPersonaPorCategoria", method = RequestMethod.GET)
+	public ModelAndView verPersonaPorCategoria(HttpServletRequest request) {		
+		
+		List<Personas> listaPersonas = personasService.usuarioPorCategoria(request.getParameter("idcategoria"));
+		
+		ModelAndView model = new ModelAndView("listadopersonas");
+		model.addObject("listaPersonas", listaPersonas);
+		model.addObject("idcategorias",request.getParameter("idcategoria") );
+		return model;		
+	}
 }

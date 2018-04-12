@@ -109,4 +109,19 @@ public class PersonasDAOImpl implements PersonasDAO {
 		return null;
 	}
 
+	@Override
+	public List<Personas> usuarioPorCategoria(String idcategoria) {
+		String hqlguay = " select role from Personas as role INNER JOIN role.empleado as emp INNER JOIN emp.categorias as dep WHERE dep.idcategorias = "+ idcategoria + "";
+		Query query = sessionFactory.getCurrentSession().createQuery(hqlguay);
+
+		@SuppressWarnings("unchecked")
+		List<Personas> personas = (List<Personas>) query.list();
+
+		if (personas != null && !personas.isEmpty()) {
+			return personas;
+		}
+
+		return null;
+	}
+
 }

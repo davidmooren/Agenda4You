@@ -51,6 +51,11 @@ public class PersonasServiceImpl implements PersonasService {
 	public List<Personas> usuarioPorDepartamento(String idDepartamento) {
 		return personasDAO.usuarioPorDepartamento(idDepartamento);
 		
+	}
+
+	@Override
+	public List<Personas> usuarioPorCategoria(String idcategoria) {
+		return personasDAO.usuarioPorCategoria(idcategoria);
 	}	
 	
 }

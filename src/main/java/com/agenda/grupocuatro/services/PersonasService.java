@@ -11,6 +11,7 @@ public interface PersonasService {
 	public	void baja(int id);
 	public Personas usuarioPorCodEmpleado(String parameter);
 	public List<Personas> usuarioPorDepartamento(String parameter);
+	public List<Personas> usuarioPorCategoria(String parameter);
 	
 	
 }
