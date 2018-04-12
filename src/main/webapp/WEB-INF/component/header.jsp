@@ -17,10 +17,7 @@
 			<div id="navbar" class="navbar-collapse collapse"
 				aria-expanded="false" style="height: 1px;">
 				<ul class="nav navbar-nav">
-					<li><a href="listPersonas">Personas</a></li>
-					<li><a href="listDirecciones">Direcciones</a></li>
-					<li><a href="#">c</a></li>
-					<li><a href="#">d</a></li>
+					<li><a href="listPersonas">Personas</a></li>					
 					<c:if test="${not empty admin }">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -29,6 +26,7 @@
 								<li><a href="listCategorias">Categorias</a></li>
 								<li><a href="listDepartamentos">Departamentos</a></li>
 								<li><a href="listTelefonos">Telefonos</a></li>
+								<li><a href="listDirecciones">Direcciones</a></li>
 							</ul>
 						</li>
 					</c:if>				
