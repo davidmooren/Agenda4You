@@ -1,4 +1,54 @@
+body {
+	background-image: url("../src/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
 
+.footer {
+	background: #222;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.principal {
+	background: #fffc;
+	background-position: 15px;
+	border-radius: 25px;
+}
+
+.header-menu {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.titulo {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.listadoProducto {
+	margin-bottom: 25px;
+	text-align: center;
+	border-radius: 6px;
+	background: #7299b8;
+	padding-bottom: 10px;
+}
+
+.usuario_logeado_header {
+	padding-top: 15px !important;
+	padding-bottom: 15px;
+	line-height: 20px;
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	color: #9d9d9d;
+}
+
+.fin_formulario {
+	margin-bottom: 30px;
+}
 
 .floatRight{
 	float:right;
@@ -9,10 +59,6 @@
 	color:red;
 }
 
-
-body {
-	background: red !important;	
-}
 
 .wrapper {	
 	margin-top: 80px;
