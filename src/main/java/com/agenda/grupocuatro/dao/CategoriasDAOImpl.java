@@ -78,6 +78,7 @@ public class CategoriasDAOImpl implements CategoriasDAO {
 	}
 
 	@Override
+	@Transactional
 	public List<Categorias> listaCategorias(String nombre) {
 		
 		String hql = "from Categorias WHERE nombre = " + nombre;

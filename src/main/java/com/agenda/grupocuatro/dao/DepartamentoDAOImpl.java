@@ -68,6 +68,7 @@ public class DepartamentoDAOImpl implements DepartamentoDAO {
 	}
 
 	@Override
+	@Transactional
 	public List<Departamento> listaDepartamentos(String nombre) {
 		
 		String hql = "from Departamento WHERE nombre = " + nombre;
