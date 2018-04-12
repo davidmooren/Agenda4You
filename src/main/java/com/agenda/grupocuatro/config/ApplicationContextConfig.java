@@ -38,6 +38,8 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+
+
 import com.agenda.grupocuatro.model.Categorias;
 import com.agenda.grupocuatro.model.Contact;
 import com.agenda.grupocuatro.model.Departamento;
@@ -107,6 +109,19 @@ public class ApplicationContextConfig implements WebMvcConfigurer{
 	}
 
 
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {	
+	    	Logger logeer = Logger.getLogger("Resolverrrrrrrr");
+	    	logeer.log(Level.WARN, "paso por resolver");
+		//    registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+			///registry.addResourceHandler("/css/**").addResourceLocations("/static/css/");	   
+		    registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/statics/", "D:/statics/")
+            .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
+		
+	}
+
+	
+	/* ocultar esto?*/
 	@Override
 	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> arg0) {
 		// TODO Auto-generated method stub
@@ -228,16 +243,6 @@ public class ApplicationContextConfig implements WebMvcConfigurer{
 
 
 
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {	
-	    	Logger logeer = Logger.getLogger("Resolverrrrrrrr");
-	    	logeer.log(Level.WARN, "paso por resolver");
-		//    registry.addResourceHandler("/static/**").addResourceLocations("/static/");
-			///registry.addResourceHandler("/css/**").addResourceLocations("/static/css/");	   
-		    registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/statics/", "D:/statics/")
-            .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
-		
-	}
     
 
 }
