@@ -23,7 +23,7 @@ public class Direcciones {
 	
 	
 	@ManyToOne
-	@JoinColumn (name="idPersona", referencedColumnName="idPersona")
+	@JoinColumn (name="idpersonas", referencedColumnName="idpersonas")
 	private Personas persona;
 	
 	

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,10 +20,11 @@ public class Telefonos {
 	
 	private String telefono;
 	
-	@OneToMany
-	@JoinColumn(name="idPersona", referencedColumnName="idpersona")
+	@ManyToOne
+	@JoinColumn(name="idpersonas", referencedColumnName="idpersonas")
 	private Personas persona;
 
+	
 	
 	public Telefonos(){
 		

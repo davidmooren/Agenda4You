@@ -1,13 +1,18 @@
 package com.agenda.grupocuatro.model;
 
 import java.sql.Date;
+import java.util.Collection;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="personas")
@@ -24,8 +29,14 @@ public class Personas {
 	private Date fechaNacimiento;
 	
 	@OneToOne
-	@JoinColumn(name="idempleado", referencedColumnName="idEmpleado")
+	@JoinColumn(name="idEmpleado", referencedColumnName="idempleados")
 	private Empleado empleado;
+	
+	@OneToMany(mappedBy = "persona")
+    private Collection<Telefonos> telefonosCollection;
+	
+	@OneToMany(mappedBy = "persona")
+    private Collection<Direcciones> direccionesCollection;
 	
 	
 	public Personas(){
@@ -43,6 +54,22 @@ public class Personas {
 		this.dni = dni;
 		this.fechaNacimiento = fechaNacimiento;
 		this.empleado = empleado;
+	}
+
+
+	public Personas(int idpersonas, String nombre, String apellido1, String apellido2, String dni, Date fechaNacimiento,
+			Empleado empleado, Collection<Telefonos> telefonosCollection,
+			Collection<Direcciones> direccionesCollection) {
+		super();
+		this.idpersonas = idpersonas;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.dni = dni;
+		this.fechaNacimiento = fechaNacimiento;
+		this.empleado = empleado;
+		this.telefonosCollection = telefonosCollection;
+		this.direccionesCollection = direccionesCollection;
 	}
 
 
@@ -114,6 +141,27 @@ public class Personas {
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
+
+
+	public Collection<Telefonos> getTelefonosCollection() {
+		return telefonosCollection;
+	}
+
+
+	public void setTelefonosCollection(Collection<Telefonos> telefonosCollection) {
+		this.telefonosCollection = telefonosCollection;
+	}
+
+
+	public Collection<Direcciones> getDireccionesCollection() {
+		return direccionesCollection;
+	}
+
+
+	public void setDireccionesCollection(Collection<Direcciones> direccionesCollection) {
+		this.direccionesCollection = direccionesCollection;
+	}
+	
 	
 	
 	
