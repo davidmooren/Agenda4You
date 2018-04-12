@@ -50,6 +50,11 @@ body {
 	margin-bottom: 30px;
 }
 
+.centrar{
+	text-align: center;
+}
+
+
 .floatRight{
 	float:right;
 	margin-right: 18px;

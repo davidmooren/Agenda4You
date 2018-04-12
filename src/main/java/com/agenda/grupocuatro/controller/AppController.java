@@ -314,6 +314,15 @@ public class AppController {
 		return model;		
 	}
 	
+	@RequestMapping(value = "/verPersona", method = RequestMethod.GET)
+	public ModelAndView verPersona(HttpServletRequest request) {
+		int personaId = Integer.parseInt(request.getParameter("id"));
+		Personas persona = personasService.get(personaId);
+		ModelAndView model = new ModelAndView("personaendetalle");
+		model.addObject("persona", persona);
+		return model;		
+	}
+	
 	@RequestMapping(value = "/deletePersona", method = RequestMethod.GET)
 	public ModelAndView deletePersona(HttpServletRequest request) {
 		int personaId = Integer.parseInt(request.getParameter("id"));

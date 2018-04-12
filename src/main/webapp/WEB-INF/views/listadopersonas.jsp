@@ -68,7 +68,9 @@
 					</c:otherwise>
 				</c:choose>
 				<div class="col-md-2">
-					<button>Ver Detalle</button>
+				<a href="verPersona?id=${persona.idpersonas }">
+							<button>Ver en Detalle</button>
+						</a>					
 				</div>
 
 				<c:if test="${not empty admin}">
