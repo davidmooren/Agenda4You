@@ -18,7 +18,7 @@
 				aria-expanded="false" style="height: 1px;">
 				<ul class="nav navbar-nav">
 					<li><a href="listPersonas">Personas</a></li>
-					<li><a href="#">b</a></li>
+					<li><a href="listDirecciones">Direcciones</a></li>
 					<li><a href="#">c</a></li>
 					<li><a href="#">d</a></li>
 					<c:if test="${not empty admin }">

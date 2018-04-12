@@ -23,8 +23,8 @@ public class Direcciones {
 	private String provincia;
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn (name="idpersonas", referencedColumnName="idpersonas")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn (name="idPersona")
 	private Personas persona;
 	
 	

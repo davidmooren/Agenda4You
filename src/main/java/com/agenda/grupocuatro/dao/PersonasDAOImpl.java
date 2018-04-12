@@ -48,7 +48,11 @@ public class PersonasDAOImpl implements PersonasDAO {
 	@Transactional
 	public List<Personas> listaPersonas() {
 
-		String hql = "from Personas";
+	String hql = "from Personas";
+		
+		 //Los datos se cogen de la clase.. es decir p.nombre (es el atributo)
+        //El p.direccion hace referencia al atributo que mapea a la otra clase
+	//	String hql = 	"from Personas e left join fetch e.telefonosCollection ";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
